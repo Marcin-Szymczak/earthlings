@@ -1,0 +1,599 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "source/game/core.d",
+			"settings":
+			{
+				"buffer_size": 809,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/game/resource_manager.d",
+			"settings":
+			{
+				"buffer_size": 936,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/app.d",
+			"settings":
+			{
+				"buffer_size": 793,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/engine/math.d",
+			"settings":
+			{
+				"buffer_size": 54,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/engine/graphics/draw.d",
+			"settings":
+			{
+				"buffer_size": 1132,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/engine/graphics/core.d",
+			"settings":
+			{
+				"buffer_size": 1833,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/DKit/D.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/D/D.sublime-build",
+					""
+				],
+				[
+					"Packages/DKit/D.sublime-build",
+					""
+				],
+				[
+					"Packages/DKit/D.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/DKit/D.sublime-build",
+					"dub"
+				]
+			],
+			[
+				"Packages/DKit/D.sublime-build",
+				"Run"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 310.0,
+		"last_filter": "dub",
+		"selected_items":
+		[
+			[
+				"dub",
+				"Build With: D - dub"
+			],
+			[
+				"",
+				"DKit: Restart DCD Autocompletion Server"
+			],
+			[
+				"build",
+				"Build With: D - dub"
+			],
+			[
+				"dcd",
+				"DKit: Restart DCD Autocompletion Server"
+			],
+			[
+				"Dub",
+				"Build With: D - dub"
+			],
+			[
+				"run",
+				"Build With: D - Run"
+			],
+			[
+				"Run",
+				"Build With: D - Run"
+			],
+			[
+				"DK",
+				"DKit: Restart DCD Autocompletion Server"
+			],
+			[
+				"show",
+				"DKit: Show Documentation"
+			],
+			[
+				"Dk",
+				"DKit: Show Documentation"
+			],
+			[
+				"buid",
+				"Build With: D - dub"
+			],
+			[
+				"DKit",
+				"DKit: Create Project From DUB Package File"
+			]
+		],
+		"width": 398.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/marcin/Development/D/earthlings",
+		"/home/marcin/Development/D/earthlings/source",
+		"/home/marcin/Development/D/earthlings/source/engine",
+		"/home/marcin/Development/D/earthlings/source/engine/graphics",
+		"/home/marcin/Development/D/earthlings/source/engine/window",
+		"/home/marcin/Development/D/earthlings/source/game"
+	],
+	"file_history":
+	[
+		"/home/marcin/Development/D/earthlings/source/engine/time.d",
+		"/home/marcin/Development/D/earthlings/source/engine/graphics/core.d",
+		"/home/marcin/Development/D/earthlings/source/engine/graphics/image.d",
+		"/home/marcin/Development/D/earthlings/object.Exception@source/engine/graphics/image.d",
+		"/home/marcin/Development/D/earthlings/source/app.d",
+		"/home/marcin/Development/D/earthlings/source/engine/core.d",
+		"/home/marcin/Development/D/earthlings/source/engine/window/core.d",
+		"/home/marcin/Development/D/earthlings/source/game/core.d",
+		"/home/marcin/Development/D/earthlings/source/engine/math.d",
+		"/home/marcin/Development/D/earthlings/source/engine/window/package.d",
+		"/home/marcin/Development/D/earthlings/source/engine/package.d",
+		"/home/marcin/Development/D/earthlings/source/engine/graphics/package.d",
+		"/home/marcin/Development/D/earthlings/source/engine/graphics/draw.d",
+		"/home/marcin/Development/D/earthlings/source/engine/event.d",
+		"/home/marcin/Development/D/earthlings/source/game/package.d",
+		"/home/marcin/Development/D/earthlings/dub.json",
+		"/home/marcin/Development/D/earthlings/source/graphics/core.d",
+		"/home/marcin/Development/D/earthlings/source/graphics/window.d",
+		"/home/marcin/Development/D/punch/source/game.d",
+		"/home/marcin/Development/D/punch/source/graphics/util.d",
+		"/home/marcin/Development/D/punch/source/app.d",
+		"/home/marcin/Development/D/punch/source/graphics/core.d",
+		"/home/marcin/Development/D/punch/source/graphics/image.d",
+		"/home/marcin/Development/D/punch/source/graphics/package.d",
+		"/home/marcin/Development/D/punch/source/util.d",
+		"/home/marcin/Development/D/punch/dub.json",
+		"/home/marcin/Development/D/harbored/README.md",
+		"/home/marcin/Development/D/punch/source/punch.sublime-project",
+		"/home/marcin/Development/D/dcurses/source/app.d",
+		"/home/marcin/Development/D/dcurses/source/ncurses.d",
+		"/home/marcin/Development/D/A/source/app.d",
+		"/home/marcin/Development/D/A/dub.json",
+		"/media/marcin/E0D1-7BFD/boot/grub/grub.cfg",
+		"/home/marcin/Development/D/asdf.txt",
+		"/home/marcin/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/marcin/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/marcin/Development/D/iniquity/source/app.d",
+		"/home/marcin/Development/D/iniquity/source/engine/package.d",
+		"/home/marcin/Development/D/iniquity/source/engine/core.d",
+		"/home/marcin/Development/D/space/source/part/graphics.d",
+		"/home/marcin/Development/D/astar/app.d",
+		"/home/marcin/Development/D/iniquity/source/engine/shader.d",
+		"/home/marcin/Development/D/iniquity/dub.json",
+		"/home/marcin/Development/D/xorgui/gui.py",
+		"/home/marcin/Development/D/Z/source/app.d",
+		"/home/marcin/Development/D/xor/source/app.d",
+		"/home/marcin/Development/D/iniquity/resources/shader/vertex.vertexshader",
+		"/home/marcin/Development/D/iniquity/resources/shader/fragment.fragmentshader",
+		"/home/marcin/Development/D/xor/dub.json",
+		"/home/marcin/Development/D/iniquity/resources/shader/fragment.gl",
+		"/home/marcin/Development/D/iniquity/resources/shader/basic.gl",
+		"/home/marcin/.cache/.fr-8Gh3rV/OpenGL-tutorial_v0014_33/tutorial02_red_triangle/tutorial02.cpp",
+		"/home/marcin/.cache/.fr-eux6jM/OpenGL-tutorial_v0014_33/tutorial01_first_window/tutorial01.cpp",
+		"/home/marcin/Development/D/iniquity/source/app2.d",
+		"/home/marcin/Development/D/dwarf/source/dwarf/util.d",
+		"/home/marcin/Development/D/dwarf/source/dwarf/entity/manager.d",
+		"/home/marcin/Development/D/dwarf/source/dwarf/core.d",
+		"/home/marcin/Development/D/dwarf/source/graphics/core.d",
+		"/home/marcin/Development/D/dwarf/source/graphics/image.d",
+		"/home/marcin/Development/D/dwarf/source/graphics/package.d",
+		"/home/marcin/Development/D/dwarf/source/dwarf/entity/core.d",
+		"/home/marcin/Development/D/dwarf/source/dwarf/level.d",
+		"/home/marcin/Development/D/dwarf/source/dwarf/entity/human.d",
+		"/home/marcin/Development/D/dwarf/source/app.d",
+		"/home/marcin/Development/D/dwarf/source/dwarf/package.d",
+		"/home/marcin/Development/D/dwarf/source/dwarf/time.d",
+		"/home/marcin/Development/D/dwarf/source/graphics.d",
+		"/home/marcin/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/marcin/Development/D/dwarf/source/dwarf/entity/package.d",
+		"/home/marcin/Development/D/dwarf/source/dwarf/entity/entity.d",
+		"/home/marcin/Development/Cortex Command_ln/Marcin.rte/Actors/Soldier/Soldier.ini",
+		"/home/marcin/Development/Cortex Command_ln/Coalition.rte/Index.ini",
+		"/home/marcin/Development/Cortex Command_ln/Browncoats.rte/Actors/Soldier/Soldier.ini",
+		"/home/marcin/Development/D/dwarf/source/dwarf/image.d",
+		"/home/marcin/Development/D/dwarf/dub.json",
+		"/home/marcin/.config/sublime-text-3/Packages/PackageResourceViewer/README.md",
+		"/opt/sublime_text/Packages/Theme - Default.sublime-package",
+		"/home/marcin/.config/sublime-text-3/Packages/User/DKit.sublime-settings",
+		"/home/marcin/.config/sublime-text-3/Packages/DKit/DKit.sublime-settings",
+		"/home/marcin/Downloads/The Theory of Everything (2014) [1080p]/napisy_pl_poprawione.txt",
+		"/home/marcin/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/marcin/Development/D/breakdown/source/main.d"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			");\n",
+			"fromHex",
+			"hex",
+			"src",
+			"};\n",
+			";",
+			"None",
+			",\n",
+			"pos",
+			"pos1",
+			"int",
+			");\n",
+			"file",
+			"vertexid",
+			"vertexbuffer",
+			";\n",
+			"\"},\n",
+			"2",
+			"3",
+			"2",
+			"Coalition.rte/",
+			"Soldier ",
+			"Œ",
+			"¯",
+			"ñ",
+			"œ",
+			"ê",
+			"æ",
+			"¿",
+			"¹",
+			"³",
+			"Ÿ"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"Marcin.rte/",
+			"Marcin Soldier ",
+			"Ś",
+			"Ż",
+			"ń",
+			"ś",
+			"ę",
+			"ć",
+			"ż",
+			"ą",
+			"ł",
+			"ź"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 5,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "source/game/core.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 809,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								305,
+								305
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 90.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "source/game/resource_manager.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 936,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								606,
+								606
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 315.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "source/app.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 793,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								749,
+								749
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "source/engine/math.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 54,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								52,
+								52
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "source/engine/graphics/draw.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1132,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1132,
+								1132
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 448.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "source/engine/graphics/core.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1833,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1824,
+								1824
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 1170.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 32.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 236.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "earthlings.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"source/engine/graphics/image.d"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 254.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

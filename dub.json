@@ -1,0 +1,9 @@
+{
+	"name": "earthlings",
+	"description": "A minimal D application.",
+	"copyright": "Copyright © 2015, marcin",
+	"authors": ["marcin"],
+	"dependencies": {
+		"derelict-sdl2": "~>1.9.6",
+	}
+}
