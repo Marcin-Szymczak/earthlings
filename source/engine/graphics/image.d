@@ -150,7 +150,7 @@ struct Atlas
 		The frames are ordered left to right, row after row
 	+++/
 
-	Frame getFrame( int index )
+	Frame getFrame( int index ) const
 	{
 		int x = index%columns;
 		int y = index/columns%rows;
@@ -379,9 +379,9 @@ void draw(	Texture tex,
 	SDL_RenderCopyEx( current_renderer, tex, null, &dst, rotation, &sdlcenter, flip );
 }
 
-void draw( 	Texture tex,
+void draw( 	const Texture tex,
 			int frame,
-			Vector2f pos,
+			const Vector2f pos,
 			float rotation = 0,
 			Vector2f scale = Vector2f(1,1),
 			Vector2f center = Vector2f(0,0),
@@ -407,5 +407,5 @@ void draw( 	Texture tex,
 	sdlcenter.x = cast(int)(center.x-fr.cx);
 	sdlcenter.y = cast(int)(center.y-fr.cy);
 
-	SDL_RenderCopyEx( current_renderer, tex, &src, &dst, rotation, &sdlcenter, flip );
+	SDL_RenderCopyEx( current_renderer, cast(SDL_Texture*)tex.texture, &src, &dst, rotation, &sdlcenter, flip );
 }

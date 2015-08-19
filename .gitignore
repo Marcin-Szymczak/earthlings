@@ -2,3 +2,4 @@ bin/
 *.sublime-workspace
 .dub/
 doc
+doc/*

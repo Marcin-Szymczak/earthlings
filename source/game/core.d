@@ -7,10 +7,12 @@ import std.stdio;
 import engine;
 import game;
 
-TextureManager texman;
+TextureManager texture_manager;
 double TIME=0;
 
 Level level;
+
+Worm worm;
 
 /+++
 	Get the frame closest to the desired angle
@@ -27,13 +29,16 @@ int getAngleFrame( float angle, int vertical_frames )
 
 void initialize()
 {
-	texman = new TextureManager;
-	texman.setBasePath( path_graphics );
-	texman.loadDirectory( "." );
+	texture_manager = new TextureManager;
+	texture_manager.setBasePath( path_graphics );
+	texture_manager.loadDirectory( "." );
 
 	graphics.setScale( 2, 2 );
 
 	level = new Level( "first" );
+
+	worm = new Worm();
+	worm.position = Vector2f( 100, 100 );
 
 }
 
@@ -54,4 +59,5 @@ void draw()
 	graphics.clear();
 
 	level.draw();
+	worm.draw();
 }

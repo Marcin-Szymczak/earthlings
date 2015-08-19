@@ -4,6 +4,7 @@ import engine;
 
 class Entity
 {
+public:
 	Vector2f position;
 	Vector2f velocity;
 
