@@ -1,5 +1,6 @@
 {
 	"name": "earthlings",
+	"targetPath": "bin/",
 	"description": "A minimal D application.",
 	"copyright": "Copyright © 2015, marcin",
 	"authors": ["marcin"],

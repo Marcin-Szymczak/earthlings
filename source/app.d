@@ -15,6 +15,9 @@ void main()
 	game.initialize();
 
 	Event event;
+	Timer timer;
+
+	timer.start;
 
 	MainLoop:
 	while( true )
@@ -35,14 +38,16 @@ void main()
 				default: break;
 			}
 		}
-		game.update( 1/60f );
+		double delta = timer.measure.total!"nsecs"/(10.0^^9);
+		timer.start;
+		game.update( delta );
 		game.draw();
 
 		graphics.present();
 		graphics.setColor( Color.black );
 		graphics.clear();
 
-		sleep( 1/60f );
+		sleep( 1/60f - delta );
 	}
 
 	engine.cleanUp();

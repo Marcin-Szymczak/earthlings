@@ -11,39 +11,104 @@
 			"file": "source/game/core.d",
 			"settings":
 			{
-				"buffer_size": 809,
+				"buffer_size": 871,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "source/game/resource_manager.d",
+			"file": "/home/marcin/.dmrc",
 			"settings":
 			{
-				"buffer_size": 936,
+				"buffer_size": 46,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "source/app.d",
+			"file": "/home/marcin/.profile",
 			"settings":
 			{
-				"buffer_size": 793,
+				"buffer_size": 675,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "source/engine/math.d",
+			"file": "source/game/entity/entity.d",
 			"settings":
 			{
-				"buffer_size": 54,
+				"buffer_size": 62,
+				"line_ending": "Unix",
+				"name": "entity"
+			}
+		},
+		{
+			"file": "dub.json",
+			"settings":
+			{
+				"buffer_size": 211,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "source/engine/graphics/draw.d",
+			"file": "source/game/entity/package.d",
 			"settings":
 			{
-				"buffer_size": 1132,
+				"buffer_size": 42,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/game/package.d",
+			"settings":
+			{
+				"buffer_size": 180,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/game/level/loader.d",
+			"settings":
+			{
+				"buffer_size": 26,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/game/level/core.d",
+			"settings":
+			{
+				"buffer_size": 772,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/game/defines.d",
+			"settings":
+			{
+				"buffer_size": 93,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/game/level/package.d",
+			"settings":
+			{
+				"buffer_size": 83,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/engine/resource.d",
+			"settings":
+			{
+				"buffer_size": 838,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/engine/graphics/image.d",
+			"settings":
+			{
+				"buffer_size": 8704,
 				"line_ending": "Unix"
 			}
 		},
@@ -51,7 +116,23 @@
 			"file": "source/engine/graphics/core.d",
 			"settings":
 			{
-				"buffer_size": 1833,
+				"buffer_size": 2016,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/game/image_manager.d",
+			"settings":
+			{
+				"buffer_size": 1131,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/engine/core.d",
+			"settings":
+			{
+				"buffer_size": 932,
 				"line_ending": "Unix"
 			}
 		}
@@ -98,6 +179,10 @@
 			[
 				"",
 				"DKit: Restart DCD Autocompletion Server"
+			],
+			[
+				"DUB",
+				"Build With: D - dub"
 			],
 			[
 				"build",
@@ -164,26 +249,33 @@
 		"/home/marcin/Development/D/earthlings/source",
 		"/home/marcin/Development/D/earthlings/source/engine",
 		"/home/marcin/Development/D/earthlings/source/engine/graphics",
-		"/home/marcin/Development/D/earthlings/source/engine/window",
-		"/home/marcin/Development/D/earthlings/source/game"
+		"/home/marcin/Development/D/earthlings/source/game",
+		"/home/marcin/Development/D/earthlings/source/game/entity"
 	],
 	"file_history":
 	[
-		"/home/marcin/Development/D/earthlings/source/engine/time.d",
-		"/home/marcin/Development/D/earthlings/source/engine/graphics/core.d",
-		"/home/marcin/Development/D/earthlings/source/engine/graphics/image.d",
-		"/home/marcin/Development/D/earthlings/object.Exception@source/engine/graphics/image.d",
+		"/home/marcin/Development/D/earthlings/source/engine/graphics/draw.d",
+		"/home/marcin/.cache/.fr-1pZY1q/Readme.txt",
+		"/home/marcin/.cache/.fr-N25bNa/Readme.txt",
+		"/home/marcin/Development/D/earthlings/source/engine/package.d",
+		"/home/marcin/Development/D/earthlings/source/game/package.d",
+		"/home/marcin/Development/D/earthlings/source/game/image_manager.d",
+		"/home/marcin/Development/D/earthlings/source/game/resource_manager.d",
+		"/home/marcin/Development/D/earthlings/source/game/core.d",
 		"/home/marcin/Development/D/earthlings/source/app.d",
 		"/home/marcin/Development/D/earthlings/source/engine/core.d",
-		"/home/marcin/Development/D/earthlings/source/engine/window/core.d",
-		"/home/marcin/Development/D/earthlings/source/game/core.d",
+		"/home/marcin/Development/D/earthlings/source/engine/time.d",
 		"/home/marcin/Development/D/earthlings/source/engine/math.d",
+		"/home/marcin/Development/D/earthlings/source/engine/graphics/font.d",
+		"/home/marcin/Development/D/earthlings/source/engine/graphics/core.d",
+		"/home/marcin/lierolibre-0.5/INSTALL",
+		"/home/marcin/Downloads/hplip-3.15.6/wificonfig.py",
+		"/home/marcin/Development/D/earthlings/source/engine/graphics/image.d",
+		"/home/marcin/Development/D/earthlings/object.Exception@source/engine/graphics/image.d",
+		"/home/marcin/Development/D/earthlings/source/engine/window/core.d",
 		"/home/marcin/Development/D/earthlings/source/engine/window/package.d",
-		"/home/marcin/Development/D/earthlings/source/engine/package.d",
 		"/home/marcin/Development/D/earthlings/source/engine/graphics/package.d",
-		"/home/marcin/Development/D/earthlings/source/engine/graphics/draw.d",
 		"/home/marcin/Development/D/earthlings/source/engine/event.d",
-		"/home/marcin/Development/D/earthlings/source/game/package.d",
 		"/home/marcin/Development/D/earthlings/dub.json",
 		"/home/marcin/Development/D/earthlings/source/graphics/core.d",
 		"/home/marcin/Development/D/earthlings/source/graphics/window.d",
@@ -268,6 +360,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"static",
+			")(",
+			"register",
 			");\n",
 			"fromHex",
 			"hex",
@@ -329,7 +424,7 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -338,77 +433,106 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 809,
+						"buffer_size": 871,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								305,
-								305
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/D/D.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 90.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "source/game/resource_manager.d",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 936,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								606,
-								606
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/D/D.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 315.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "source/app.d",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 793,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								749,
-								749
+								317,
+								317
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/D/D.tmLanguage",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 78.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/marcin/.dmrc",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 46,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/marcin/.profile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 675,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "source/game/entity/entity.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 62,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								62,
+								62
+							]
+						],
+						"settings":
+						{
+							"auto_name": "entity",
+							"syntax": "Packages/D/D.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -418,20 +542,76 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "source/engine/math.d",
+					"buffer": 4,
+					"file": "dub.json",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 54,
+						"buffer_size": 211,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								52,
-								52
+								45,
+								45
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "source/game/entity/package.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 42,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								20,
+								20
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "source/game/package.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 180,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								93,
+								93
 							]
 						],
 						"settings":
@@ -446,20 +626,161 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "source/engine/graphics/draw.d",
+					"buffer": 7,
+					"file": "source/game/level/loader.d",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1132,
+						"buffer_size": 26,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1132,
-								1132
+								26,
+								26
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "source/game/level/core.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 772,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								733,
+								733
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 471.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "source/game/defines.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 93,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								90,
+								90
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "source/game/level/package.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 83,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								50,
+								50
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/D/D.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "source/engine/resource.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 838,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								705,
+								705
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 239.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "source/engine/graphics/image.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8704,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8617,
+								8617
 							]
 						],
 						"settings":
@@ -468,27 +789,39 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 448.0,
+						"translation.y": 3441.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 13,
 					"file": "source/engine/graphics/core.d",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1833,
+						"buffer_size": 2016,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1824,
-								1824
+								1871,
+								1871
+							],
+							[
+								1907,
+								1907
+							],
+							[
+								1945,
+								1945
+							],
+							[
+								1981,
+								1981
 							]
 						],
 						"settings":
@@ -497,10 +830,68 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": -0.0,
-						"translation.y": 1170.0,
+						"translation.y": 1395.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "source/game/image_manager.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1131,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								468,
+								468
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 360.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "source/engine/core.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 932,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								198,
+								198
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
 					"type": "text"
 				}
 			]
