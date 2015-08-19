@@ -1,9 +1,0 @@
-{
-	"dub": {
-		"cachedUpgrades": {
-			"derelict-util": "2.0.3",
-			"derelict-sdl2": "1.9.6"
-		},
-		"lastUpgrade": "2015-08-19T11:48:33.886077"
-	}
-}
