@@ -8,9 +8,11 @@ import std.range;
 
 import derelict.sdl2.sdl;
 
+import engine.math;
 import engine.window.core;
 
 Renderer current_renderer;
+Color current_color;
 
 enum BlendMode
 {
@@ -44,6 +46,13 @@ class Renderer
 		SDL_DestroyRenderer( _renderer );
 	}
 
+	@property Vector2f size()
+	{
+		int w, h;
+		//SDL_GetRendererOutputSize( _renderer, &w, &h );
+		return Vector2f( cast(float)w, cast(float)h );
+	}
+
 	alias _renderer this;
 }
 
@@ -72,6 +81,11 @@ struct Color
 	this( string hex_string )
 	{
 		this = fromHex( hex_string );
+	}
+
+	SDL_Color toSDL_Color()
+	{
+		return SDL_Color( this.r, this.g, this.b, this.a );
 	}
 
 	static Color _fromHex( string str )
@@ -109,4 +123,59 @@ struct Color
 	enum Color yellow = hex!("#FFFF00");
 	enum Color cyan = hex!("#00FFFF");
 	enum Color magenta = hex!("#FF00FF");
+}
+
+/+++
+	Set the currently used renderer
+
+	NOTE: You shouldn't need to call it more than once
++++/
+void setRenderer( Renderer renderer )
+{
+	current_renderer = renderer;
+}
+/+++
+	Set the drawing color
++++/
+void setColor( ubyte r, ubyte g, ubyte b, ubyte a )
+{
+	SDL_SetRenderDrawColor( current_renderer, r, g, b, a );
+	
+	current_color.r = r;
+	current_color.g = g;
+	current_color.b = b;
+	current_color.a = a;
+}
+///
+void setColor( Color color )
+{
+	setColor( color.r, color.g, color.b, color.a );
+}
+/+++
+	Set the drawing scale
++++/
+void setScale( float x, float y )
+{
+	SDL_RenderSetScale( current_renderer, x, y );
+}
+///
+void setScale( Vector2f scale )
+{
+	setScale( scale.x, scale.y );
+}
+/+++
+	Get the available drawing area ( size of the screen )
++++/
+Vector2f getSize()
+{
+	return current_renderer.size;
+}
+/+++
+	Get current drawing scale
++++/
+Vector2f getScale()
+{
+	Vector2f scale;
+	SDL_RenderGetScale( current_renderer, &scale.x, &scale.y );
+	return scale;
 }

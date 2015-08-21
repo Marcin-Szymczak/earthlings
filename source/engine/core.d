@@ -3,11 +3,14 @@
 +++/
 module engine.core;
 
+import std.exception;
 import std.format;
 import std.stdio;
+import std.string;
 
 import derelict.sdl2.image;
 import derelict.sdl2.sdl;
+import derelict.sdl2.ttf;
 
 /+++
 	Modules which can be initialized on startup
@@ -32,7 +35,7 @@ enum Init : int
 void initialize( Init[] args ... )
 {
 	DerelictSDL2.load();
-	//DerelictSDL2ttf.load();
+	DerelictSDL2ttf.load();
 	DerelictSDL2Image.load();
 
 	int sum;
@@ -40,8 +43,10 @@ void initialize( Init[] args ... )
 	{
 		sum = sum | arg;
 	}
-	if(SDL_Init(sum))
-		throw new Exception( format( "Couldn't initialize SDL, '%s'", SDL_GetError() ) );
+	enforce( SDL_Init( sum ) == 0, format( "Couldn't initialize SDL, '%s'", SDL_GetError().fromStringz ) );
+	enforce( TTF_Init() != -1, format( "Couldn't initialize SDL2_TTF, '%s'", TTF_GetError().fromStringz ));
+
+	writeln( "Engine initialized..." );
 }
 
 /+++

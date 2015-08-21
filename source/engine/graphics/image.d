@@ -189,6 +189,10 @@ public:
 	{
 		loadFromFile( path );
 	}
+	~this()
+	{
+		SDL_FreeSurface( surface );
+	}
 	/+++
 		Load an image from file.
 	+++/
@@ -302,6 +306,9 @@ public:
 			throw new Exception( "Texture.this couldn't create a texture from surface");
 		w = surface.w;
 		h = surface.h;
+	}
+	~this(){
+		SDL_DestroyTexture( texture );
 	}
 	alias texture this;
 }

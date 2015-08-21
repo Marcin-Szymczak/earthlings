@@ -8,31 +8,6 @@ import engine.graphics.core;
 import engine.graphics.image;
 import engine.math;
 
-void setRenderer( Renderer renderer )
-{
-	current_renderer = renderer;
-}
-
-void setColor( ubyte r, ubyte g, ubyte b, ubyte a )
-{
-	SDL_SetRenderDrawColor( current_renderer, r, g, b, a );
-}
-
-void setColor( Color color )
-{
-	setColor( color.r, color.g, color.b, color.a );
-}
-
-void setScale( float x, float y )
-{
-	SDL_RenderSetScale( current_renderer, x, y );
-}
-
-void setScale( Vector2f scale )
-{
-	setScale( scale.x, scale.y );
-}
-
 void clear()
 {
 	SDL_RenderClear( current_renderer );

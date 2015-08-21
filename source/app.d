@@ -16,6 +16,7 @@ void main()
 
 	Event event;
 	Timer timer;
+	Timer frametimer;
 
 	timer.start;
 
@@ -38,8 +39,10 @@ void main()
 				default: break;
 			}
 		}
-		double delta = timer.measure.total!"nsecs"/(10.0^^9);
+		double delta = timer.seconds();
 		timer.start;
+
+		frametimer.start;
 		game.update( delta );
 		game.draw();
 
@@ -47,7 +50,8 @@ void main()
 		graphics.setColor( Color.black );
 		graphics.clear();
 
-		sleep( 1/60f - delta );
+		double frametime = frametimer.seconds;
+		sleep( 1/60f - frametime );
 	}
 
 	engine.cleanUp();

@@ -9,4 +9,5 @@ module engine.graphics;
 
 public import engine.graphics.core;
 public import engine.graphics.draw;
+public import engine.graphics.font;
 public import engine.graphics.image;

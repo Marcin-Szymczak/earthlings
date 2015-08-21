@@ -1,0 +1,6 @@
+[Basic]
+Name = Mars
+
+[Physics]
+Gravity = 0.376g
+
