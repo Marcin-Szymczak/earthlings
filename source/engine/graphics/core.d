@@ -11,8 +11,12 @@ import derelict.sdl2.sdl;
 import engine.math;
 import engine.window.core;
 
+
+
+
 Renderer current_renderer;
 Color current_color;
+Transformation current_transformation;
 
 enum BlendMode
 {
@@ -34,6 +38,8 @@ class Renderer
 {
 	SDL_Renderer* _renderer;
 
+	int w, h;
+
 	this( Window window, int index=0, uint flags=0 )
 	{
 		_renderer = SDL_CreateRenderer( window, index, flags );
@@ -49,16 +55,42 @@ class Renderer
 	@property Vector2f size()
 	{
 		int w, h;
-		//SDL_GetRendererOutputSize( _renderer, &w, &h );
+		SDL_GetRendererOutputSize( _renderer, &w, &h );
 		return Vector2f( cast(float)w, cast(float)h );
 	}
 
 	alias _renderer this;
 }
 
+/+++
+	Graphical transformation
++++/
 struct Transformation
 {
-	
+	Vector2f _translation = {0,0};
+	Vector2f _scale = {1,1};
+
+	void scale( Vector2f scale )
+	{
+		_scale = scale;
+		_translation /= scale;
+	}
+
+	void translate( Vector2f translation )
+	{
+		_translation += translation;
+	}
+
+	Vector2f get( Vector2f point )
+	{
+		return (point + _translation);
+	}
+
+	void origin()
+	{
+		_translation = Vector2f(0,0);
+		_scale = Vector2f(1,1);
+	}
 }
 
 struct Color
@@ -151,17 +183,17 @@ void setColor( Color color )
 {
 	setColor( color.r, color.g, color.b, color.a );
 }
+void translate( Vector2f translation )
+{
+	current_transformation.translate( translation );
+}
 /+++
 	Set the drawing scale
 +++/
-void setScale( float x, float y )
-{
-	SDL_RenderSetScale( current_renderer, x, y );
-}
-///
 void setScale( Vector2f scale )
 {
-	setScale( scale.x, scale.y );
+	current_transformation.scale( scale );
+	SDL_RenderSetScale( current_renderer, scale.x, scale.y );
 }
 /+++
 	Get the available drawing area ( size of the screen )

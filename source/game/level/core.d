@@ -7,6 +7,7 @@ import std.typecons;
 import engine;
 import game.defines;
 
+Level current_level;
 
 struct Material
 {
@@ -40,7 +41,10 @@ private:
 	Texture fg;
 	Texture bg;
 
-	bool dirty = false;
+	int w,h;
+	string name;
+
+	bool dirty = true;
 
 public:
 
@@ -58,20 +62,23 @@ public:
 		fg = null;
 		bg = null;
 
+		this.name = name;
+
 		string path = path_levels ~ name ~ "/";
+
+		/+ Load available images -> foreground, material and optionally background +/
 		fg_img = new Image( path ~ "fg.png" );
 		fg = new Texture( fg_img );
-
 		if( exists( path ~ "bg.png" ) ){
 			bg_img = new Image( path ~ "bg.png" );
 			bg = new Texture( bg_img );
 		}
 		auto mat_img = scoped!Image( path ~ "mat.png" );
 
+		/+ Calculate material types out of mat file +/
 		mat.length = mat_img.w*mat_img.h;
-
 		for( int y; y < mat_img.h; y++ )
-			for( int x; x< mat_img.w; x++ )
+			for( int x; x < mat_img.w; x++ )
 			{
 				Color color = mat_img.getPixel( x, y );
 
@@ -84,7 +91,9 @@ public:
 				}
 			}
 
-		//writefln( "Level '%s' loaded!", path );
+		w = mat_img.w;
+		h = mat_img.h;
+
 
 		dirty = true;
 	}
@@ -111,4 +120,26 @@ public:
 			graphics.draw( fg, Vector2f( 0, 0 ) );
 	}
 
+	bool isSolid( Vector2f pos )
+	{
+		int x,y;
+		x = cast(int)pos.x;
+		y = cast(int)pos.y;
+
+		if( x<0 || x>=w || y<0 || y>=h ){
+			return true;		
+		}
+		Material pixel = Material.types[ mat[x + y*w] ];
+		if( (pixel.property & Material.Property.Solid) == Material.Property.Solid ){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+}
+
+bool isSolid( Vector2f position )
+{
+	return current_level.isSolid( position );
 }

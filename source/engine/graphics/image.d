@@ -15,6 +15,9 @@ import derelict.sdl2.sdl;
 import engine.graphics.core;
 import engine.math;
 
+
+
+
 /+++
 	Structure containing image atlas data
 +++/
@@ -117,7 +120,8 @@ struct Atlas
 			Color col = image.getPixel( x, 0 );
 			if( col == Color.red || col == Color.blue ){
 				framecx ~= x;
-			}else if( col == Color.black || col == Color.blue ){
+			}
+			if( col == Color.black || col == Color.blue ){
 				framepx ~= x+1;
 				columns++;
 			}
@@ -128,7 +132,8 @@ struct Atlas
 			Color col = image.getPixel( 0, y );
 			if( col == Color.red || col == Color.blue ){
 				framecy ~= y;
-			}else if( col == Color.black || col == Color.blue ){
+			}
+			if( col == Color.black || col == Color.blue ){
 				framepy ~= y+1;
 				rows++;
 			}
@@ -177,11 +182,9 @@ struct Atlas
 +++/
 class Image
 {
-private:
-	Atlas* atlas;
-
 public:
 	SDL_Surface* surface;
+	Atlas* atlas;
 	string file_path;
 
 	this(){}
@@ -373,6 +376,9 @@ void draw(	Texture tex,
 			Vector2f center = Vector2f(0,0),
 			Flip flip = Flip.None )
 {
+	/+ Apply current transformations +/
+	pos = current_transformation.get( pos );
+
 	SDL_Rect dst;
 	dst.x = cast(int)pos.x;
 	dst.y = cast(int)pos.y;
@@ -388,7 +394,7 @@ void draw(	Texture tex,
 
 void draw( 	const Texture tex,
 			int frame,
-			const Vector2f pos,
+			Vector2f pos,
 			float rotation = 0,
 			Vector2f scale = Vector2f(1,1),
 			Vector2f center = Vector2f(0,0),
@@ -397,6 +403,9 @@ void draw( 	const Texture tex,
 	if( !tex.atlas )
 		throw new Exception( "Can not draw a texture's frame if it has no atlas!");
 	
+	/+ Apply current transformations +/
+	pos = current_transformation.get( pos );
+
 	Frame fr = tex.atlas.getFrame(frame);
 	SDL_Rect src;
 	src.x = cast(int)fr.x;

@@ -1,5 +1,6 @@
 module game.core;
 
+import std.digest.sha;
 import std.format;
 import std.math;
 import std.range;
@@ -11,11 +12,10 @@ import game;
 TextureManager texture_manager;
 double TIME=0;
 
-Level level;
-
 Worm worm;
 
 Font testfont;
+Font testbitmap;
 Texture simple_text;
 
 /+++
@@ -38,41 +38,45 @@ void initialize()
 	texture_manager.loadDirectory( "." );
 
 
-	level = new Level( "mars" );
+	current_level = new Level( "mars" );
 
 	worm = new Worm();
-	worm.position = Vector2f( 300, 300 );
+	worm.position = Vector2f( 500, 50 );
 
 	testfont = new TTFFont;
 	testfont.loadFromFile( "data/fonts/UbuntuMono-Regular.ttf", 24 );
 
+	testbitmap = new BMPFont;
+	testbitmap.loadFromFile( "data/fonts/small.png", 24 );
 }
 
 void update(double delta)
 {
 	TIME += delta;
-	level.update( delta );
+	current_level.update( delta );
+	worm.update( delta );
 	simple_text = testfont.render( format( "FPS: %s", 1/delta ) );
 }
 
 void draw()
-{
+{	
+	current_transformation.origin;
+
+	translate( getSize()/2 );
+	graphics.setScale( Vector2f( 2, 2 ) );
+	translate( -worm.position );
+
 	float angle = TIME;
 
-	Vector2f pos = {100, 100};
-	Vector2f aimpos = pos + Vector2f( 0, -5 );
-
-	graphics.setScale( Vector2f( 2, 2 ) );
-	graphics.setColor( Color.hex!"#C0ECF7" );
-	graphics.clear();
-
-	level.draw();
+	current_level.draw();
 	worm.draw();
 
 	Vector2f scale = getScale();
 	graphics.setScale( Vector2f( 1, 1 ) );
 	graphics.setColor( Color.black );
 	graphics.draw( simple_text, 0, 0 );
+
+	graphics.draw( testbitmap.render("HELLO BITMAP! 1234567890 1337 ELITE abcdefghijklmnoprstuvwxyz"), 0, 36 );
 
 	graphics.setScale( scale );
 }

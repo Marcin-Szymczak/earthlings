@@ -8,6 +8,9 @@ import engine.graphics.core;
 import engine.graphics.image;
 import engine.math;
 
+
+
+
 void clear()
 {
 	SDL_RenderClear( current_renderer );
@@ -25,6 +28,7 @@ void drawPoint( float x, float y )
 
 void drawPoint( Vector2f pos )
 {
+	pos = current_transformation.get( pos );
 	drawPoint( pos.x, pos.y );
 }
 
@@ -59,6 +63,9 @@ void drawLine( float x, float y, float x2, float y2 )
 
 void drawLine( Vector2f start, Vector2f end )
 {
+	start = current_transformation.get( start );
+	end = current_transformation.get( end );
+
 	SDL_RenderDrawLine( current_renderer, cast(int)start.x, cast(int)start.y, cast(int)end.x, cast(int)end.y );
 }
 

@@ -8,6 +8,26 @@ struct Vector2(T)
 	T x;
 	T y;
 
+	@property
+	T length()
+	{
+		import std.math;
+
+		return sqrt( x^^2 + y^^2 );
+	}
+	@property
+	Vector2f!T normalize()
+	{
+		T len = length;
+		return Vector2f!T( x/length, y/length );
+	}
+
+	Vector2!T opUnary( string s )()
+	if( s == "-")
+	{
+		return Vector2f( -x, -y );
+	}
+
 	Vector2!T opBinary( string op )( Vector2!T rhs )
 	{
 		static if( op == "+" || op == "-" || op == "*" || op == "/" ){
@@ -21,5 +41,13 @@ struct Vector2(T)
 			mixin( "return Vector2!T( x "~op~" rhs, y "~op~" rhs );");
 		}else
 			static assert( 0, "Vector!T operation "~op~" not supported");
+	}
+	void opOpAssign( string op )( Vector2!T rhs )
+	{
+		this = opBinary!op( rhs );
+	}
+	void opOpAssign( string op )( T rhs )
+	{
+		this = opBinary!op( rhs );
 	}
 }

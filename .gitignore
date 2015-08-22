@@ -3,3 +3,5 @@ bin/
 .dub/
 doc
 doc/*
+*.log
+*.def
