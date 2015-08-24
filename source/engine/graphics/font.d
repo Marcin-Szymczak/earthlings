@@ -21,11 +21,16 @@ import engine.graphics.image;
 
 
 
+/+++
+	Font interface
 
+	Every font should implement these
++++/
 interface Font
 {
 	void loadFromFile( string path, int size=11 );
-	Texture render( string text );
+	Texture createTexture( string text );
+	Image createImage( string text );
 }
 
 class TTFFont : Font
@@ -33,6 +38,10 @@ class TTFFont : Font
 	TTF_Font* font;
 
 	this(){}
+	this( string path, int size )
+	{
+		loadFromFile( path, size );
+	}
 
 	void loadFromFile( string path, int size )
 	{
@@ -41,12 +50,17 @@ class TTFFont : Font
 			throw new Exception( format( "Couldn't open font file '%s' (%s)", path, TTF_GetError().fromStringz ) );
 	}
 
-	Texture render( string text )
+	Image createImage( string text )
+	{
+		return new Image( TTF_RenderUTF8_Blended( font, text.toStringz, current_color.toSDL_Color) );
+	}
+
+	Texture createTexture( string text )
 	{
 		SDL_Surface* surface = TTF_RenderUTF8_Blended( font, text.toStringz, current_color.toSDL_Color );
 		Texture tex = new Texture( surface );
 		SDL_FreeSurface( surface );
-		return tex;
+		return tex;		
 	}
 }
 
@@ -57,6 +71,10 @@ class BMPFont : Font
 	int[dchar] chars;
 
 	this(){}
+	this( string path, int size )
+	{
+		loadFromFile( path, size );
+	}
 
 	void loadFromFile( string path, int size )
 	{
@@ -102,7 +120,12 @@ class BMPFont : Font
 		return getFrame( '?' ).h;
 	}
 
-	Texture render( string text )
+	Image createImage( string text )
+	{
+		return new Image;
+	}
+
+	Texture createTexture( string text )
 	{
 		int w = getLength( text );
 		int h = getHeight();

@@ -35,7 +35,9 @@ struct Frame
 		sink( format("[pos: %s,%s;size: %s,%s;center: %s,%s]", x,y,w,h,cx,cy) );
 	}
 }
-
+/+++
+	Atlas data used by Images and Textures
++++/
 struct Atlas
 {
 	int[] framepx, framepy;
@@ -187,14 +189,32 @@ public:
 	Atlas* atlas;
 	string file_path;
 
+	///
 	this(){}
+	/// Create an image from filename
 	this( string path )
 	{
 		loadFromFile( path );
 	}
+	/// Create an image from SDL_Surface
+	this( SDL_Surface* surface )
+	{
+		this.surface = surface;
+	}
+	/// Create a blank image
+	this( int w, int h )
+	{
+		create( w, h );
+	}
 	~this()
 	{
 		SDL_FreeSurface( surface );
+	}
+
+	void create( int w, int h )
+	{
+		surface = SDL_CreateRGBSurface( 0, w, h, 32, 
+			0xff000000, 0x00ff0000, 0x0000ff00, 0x000000ff );
 	}
 	/+++
 		Load an image from file.
@@ -243,37 +263,49 @@ public:
 		uint pixel = *(cast(uint*)ptr);
 		uint temp;
 		Color col;
-
+		
 		/++
 			Method of color extracting taken from SDL2's wiki
 			https://wiki.libsdl.org/SDL_PixelFormat
 		++/
-		temp = pixel & format.Rmask;
-		temp = temp >> format.Rshift;
-		temp = temp << format.Rloss;
-		col.r = cast(ubyte)temp;
-
-		temp = pixel & format.Gmask;
-		temp = temp >> format.Gshift;
-		temp = temp << format.Gloss;
-		col.g = cast(ubyte)temp;
-
-		temp = pixel & format.Bmask;
-		temp = temp >> format.Bshift;
-		temp = temp << format.Bloss;
-		col.b = cast(ubyte)temp;
-
-		if( format.Amask == 0 ){
-			col.a = 255;
-		}else{
-			temp = pixel & format.Amask;
-			temp = temp >> format.Ashift;
-			temp = temp << format.Aloss;
-			col.a = cast(ubyte)temp;
+		ubyte getPixelComponent( uint mask, uint shift, uint loss)
+		{
+			uint temp = pixel & mask;
+			temp >>= shift;
+			temp <<= loss;
+			return cast(ubyte) temp;
 		}
+
+		col.r = getPixelComponent( format.Rmask, format.Rshift, format.Rloss );
+		col.g = getPixelComponent( format.Gmask, format.Gshift, format.Gloss );
+		col.b = getPixelComponent( format.Bmask, format.Bshift, format.Bloss );
+		if( format.Amask == 0 )
+			col.a = 255;
+		else
+			col.a = getPixelComponent( format.Amask, format.Ashift, format.Aloss );
+
 		return col;
 	}
 
+	/+++
+		Blit a image onto this one
+	+++/
+	void blit( Image image, Vector2f srcpos, Vector2f size, Vector2f destpos )
+	{
+		SDL_Rect src;
+		src.x = cast(int)srcpos.x;
+		src.y = cast(int)srcpos.y;
+		src.w = cast(int)size.x;
+		src.h = cast(int)size.y;
+
+		SDL_Rect dst;
+		dst.x = cast(int)destpos.x;
+		dst.y = cast(int)destpos.y;
+		dst.w = src.w;
+		dst.h = src.h;
+
+		SDL_BlitSurface( image.surface, &src, this.surface, &dst );
+	}
 	alias surface this;
 }
 

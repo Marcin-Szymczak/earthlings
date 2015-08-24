@@ -5,3 +5,4 @@ public import game.defines;
 public import game.entity;
 public import game.image_manager;
 public import game.level; import level = game.level;
+public import game.player;

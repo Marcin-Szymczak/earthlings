@@ -1,6 +1,6 @@
 module game.core;
 
-import std.digest.sha;
+import core.memory;
 import std.format;
 import std.math;
 import std.range;
@@ -12,11 +12,11 @@ import game;
 TextureManager texture_manager;
 double TIME=0;
 
-Worm worm;
+Player local_player;
 
-Font testfont;
-Font testbitmap;
 Texture simple_text;
+
+Font mono;
 
 /+++
 	Get the frame closest to the desired angle
@@ -40,22 +40,51 @@ void initialize()
 
 	current_level = new Level( "mars" );
 
-	worm = new Worm();
-	worm.position = Vector2f( 500, 50 );
+	local_player = new Player;
+	local_player.name = "Local Player";
 
-	testfont = new TTFFont;
-	testfont.loadFromFile( "data/fonts/UbuntuMono-Regular.ttf", 24 );
+	auto worm = new Worm();
+	local_player.entity = worm;
 
-	testbitmap = new BMPFont;
-	testbitmap.loadFromFile( "data/fonts/small.png", 24 );
+	local_player.entity.position = Vector2f( 500, 50 );
+
+
+	mono = new TTFFont( "data/fonts/ubuntu_mono.ttf", 14 );
+
+	/+ test the speed of rendering textures +/
+
+	GC.collect();
+
+	Benchmark bench;
+	bench.start( "Rendering 100 000 Hello World!s");
+	for( int i = 0; i<100_000; i++ )
+	{
+		auto texture = mono.createTexture( "Hello World!" );
+	}
+	writeln( bench.end() );
+
+	GC.collect();
+
+	bench.start( "Creating 100 000 Images of Hello World!" );
+	Image image = new Image( 512, 512 );
+	
+	for( int i =0; i<100_000; i++ )
+	{
+		auto text = mono.createImage( "Hello World!" );
+		image.blit( text, Vector2f( 0, 0 ), Vector2f( text.w, text.h ), Vector2f( 0, 0 ) );
+		
+	}
+	writeln( bench.end() );
+
+	GC.enable();
 }
 
 void update(double delta)
 {
 	TIME += delta;
+
 	current_level.update( delta );
-	worm.update( delta );
-	simple_text = testfont.render( format( "FPS: %s", 1/delta ) );
+	local_player.entity.update( delta );
 }
 
 void draw()
@@ -64,19 +93,10 @@ void draw()
 
 	translate( getSize()/2 );
 	graphics.setScale( Vector2f( 2, 2 ) );
-	translate( -worm.position );
+	translate( -local_player.entity.position );
 
 	float angle = TIME;
 
 	current_level.draw();
-	worm.draw();
-
-	Vector2f scale = getScale();
-	graphics.setScale( Vector2f( 1, 1 ) );
-	graphics.setColor( Color.black );
-	graphics.draw( simple_text, 0, 0 );
-
-	graphics.draw( testbitmap.render("HELLO BITMAP! 1234567890 1337 ELITE abcdefghijklmnoprstuvwxyz"), 0, 36 );
-
-	graphics.setScale( scale );
+	local_player.entity.draw();
 }

@@ -6,6 +6,9 @@
 module engine.time;
 
 import core.thread;
+import std.conv;
+import std.format;
+import std.stdio;
 
 void sleep( double time )
 {
@@ -15,20 +18,41 @@ void sleep( double time )
 
 struct Timer
 {
-	MonoTime measurement;
+	alias system_ticks = long;
+
+	system_ticks _start;
 
 	void start()
 	{
-		measurement = MonoTime.currTime;
+		_start = MonoTime.currTime.ticks;
 	}
 
-	Duration measure()
+	system_ticks measure()
 	{
-		return MonoTime.currTime - measurement;
+		return MonoTime.currTime.ticks - _start;
 	}
 
-	double seconds()
+	real seconds()
 	{
-		return cast(double)( measure().total!"nsecs"/(10.0^^9) );
+		//return cast(double)( measure().total!"nsecs"/(10.0^^9) );
+		return measure()/cast(real)(MonoTime.ticksPerSecond);
+	}
+}
+
+struct Benchmark
+{
+	Timer timer;
+	string name;
+
+	void start( string name )
+	{
+		this.name = name;
+		timer.start();
+	}
+
+	string end()
+	{
+		real time = timer.seconds();
+		return format( "%s took %s seconds", name, time );
 	}
 }
