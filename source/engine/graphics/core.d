@@ -81,9 +81,12 @@ struct Transformation
 		_translation += translation;
 	}
 
-	Vector2f get( Vector2f point )
+	Vector2f get(bool scale=true)( Vector2f point )
 	{
-		return (point + _translation);
+		static if(scale == true)
+			return (point + _translation)*scale;
+		else
+			return point + _translation;
 	}
 
 	void origin()

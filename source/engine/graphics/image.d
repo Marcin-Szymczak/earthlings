@@ -151,12 +151,12 @@ struct Atlas
 				throw new Exception( "Atlas.generate malformed image. Not every frame has a centerpoint specified!" );
 		}
 	}
+
 	/+++
 		Retrieve a frame from the image atlas
 	
 		The frames are ordered left to right, row after row
 	+++/
-
 	Frame getFrame( int index ) const
 	{
 		int x = index%columns;
@@ -173,7 +173,23 @@ struct Atlas
 		return fr;
 	}
 
-	Frame opIndex( int index )
+	/+++
+		Get the frame closest to the desired angle
+
+		provided all the rows represent 180 degrees
+	+++/
+	Frame getAngleFrame( double angle, int offset=0 ) const
+	{
+		import std.math;
+
+		double ang_per_frame = PI/rows;
+		int id = cast(int)( (angle+PI_2)/ang_per_frame )*columns;
+		id += offset%columns;
+
+		return getFrame( id );
+	}
+
+	Frame opIndex( int index ) const
 	{
 		return getFrame( index );
 	}
@@ -221,9 +237,9 @@ public:
 	+++/
 	void loadFromFile( string path )
 	{
-		surface = IMG_Load( path.toStringz );//SDL_LoadBMP( path.toStringz );
+		surface = IMG_Load( path.toStringz );
 		if( !surface )
-			throw new Exception( format("Couldn't load image '%s', %s", path, SDL_GetError().fromStringz ));
+			throw new Exception( format("Couldn't load image '%s', %s", path, IMG_GetError().fromStringz ));
 		file_path = path.idup;
 	}
 	/+++
@@ -264,10 +280,10 @@ public:
 		uint temp;
 		Color col;
 		
-		/++
+		/+
 			Method of color extracting taken from SDL2's wiki
 			https://wiki.libsdl.org/SDL_PixelFormat
-		++/
+		+/
 		ubyte getPixelComponent( uint mask, uint shift, uint loss)
 		{
 			uint temp = pixel & mask;
@@ -312,18 +328,19 @@ public:
 /+++
 	Texture residing in GPU's memory
 
-	It can not be modified
+	It can not be modified easily
 +++/
 class Texture
 {
 public:
-	SDL_Texture* texture;
-	Atlas* atlas;
-	int w, h;
+	SDL_Texture* texture; /// Internal SDL_Texture*
+	Atlas* atlas; /// The atlas inherited from image
+	int w, h; /// Its width and height
 
+	///
 	this(){}
 	/+++
-		Initialize a texture with a surface
+		Initialize a texture with an image
 	+++/
 	this( Image img )
 	{
@@ -334,6 +351,9 @@ public:
 		w = img.w;
 		h = img.h;
 	}
+	/+++
+		Initialize a texture with a SDL surface
+	+++/
 	this( SDL_Surface* surface )
 	{
 		texture = SDL_CreateTextureFromSurface( current_renderer, surface );
@@ -348,56 +368,15 @@ public:
 	alias texture this;
 }
 
-/+++
-	Draw a texture to the screen
-
-	x,y is the top-left of the drawn texture
-+++/
-void draw( Texture tex, float x, float y )
+/+
+Image generateColoredImage( Image source, Image mask, Color col_mask, Col tint )
 {
-	/+
-	SDL_Rect src;
-	src.x = 0;
-	src.y = 0;
-	src.w = tex.w;
-	src.h = tex.h;
-	+/
-	SDL_Rect dest;
-	dest.x = cast(int)x;
-	dest.y = cast(int)y;
-	dest.w = tex.w;
-	dest.h = tex.h;
 
-	SDL_RenderCopy( current_renderer, tex, null, &dest );
 }
-
-void draw( Texture tex, int fr, float x, float y )
-{
-	if(!tex.atlas){
-		throw new Exception( "Can not draw a frame of Texture without an image atlas!");
-		//draw( tex, x, y );
-		//return;
-	}
-
-	Frame frame = tex.atlas.getFrame(fr);
-
-	SDL_Rect src;
-	src.x = frame.x;
-	src.y = frame.y;
-	src.w = frame.w;
-	src.h = frame.h;
-
-	SDL_Rect dest;
-	dest.x = cast(int)x - frame.cx;
-	dest.y = cast(int)y - frame.cy;
-	dest.w = frame.w;
-	dest.h = frame.h;
-
-	SDL_RenderCopy( current_renderer, tex, &src, &dest );
-}
++/
 
 /+++
-	Draw an texture with additional options
+	Draw a texture
 
 	You can specify the rotation, scale and centerpoint around which it is rotated.
 +++/
@@ -423,10 +402,29 @@ void draw(	Texture tex,
 
 	SDL_RenderCopyEx( current_renderer, tex, null, &dst, rotation, &sdlcenter, flip );
 }
-
+/+++
+	Draw a texture's frame from its atlas
++++/
 void draw( 	const Texture tex,
 			int frame,
-			Vector2f pos,
+			Vector2f position,
+			float rotation = 0,
+			Vector2f scale = Vector2f(1,1),
+			Vector2f center = Vector2f(0,0),
+			Flip flip = Flip.None )
+{
+	if( !tex.atlas )
+		throw new Exception( "Can not draw a texture's frame if it has no atlas!");
+	
+	draw( tex, tex.atlas.getFrame( frame ), position, rotation, scale, center, flip );
+}
+
+/+++
+	Draw a texture's frame from its atlas
++++/
+void draw( 	const Texture tex,
+			const Frame frame,
+			Vector2f position,
 			float rotation = 0,
 			Vector2f scale = Vector2f(1,1),
 			Vector2f center = Vector2f(0,0),
@@ -436,24 +434,23 @@ void draw( 	const Texture tex,
 		throw new Exception( "Can not draw a texture's frame if it has no atlas!");
 	
 	/+ Apply current transformations +/
-	pos = current_transformation.get( pos );
+	position = current_transformation.get( position );
 
-	Frame fr = tex.atlas.getFrame(frame);
 	SDL_Rect src;
-	src.x = cast(int)fr.x;
-	src.y = cast(int)fr.y;
-	src.w = cast(int)fr.w;
-	src.h = cast(int)fr.h;
+	src.x = cast(int)frame.x;
+	src.y = cast(int)frame.y;
+	src.w = cast(int)frame.w;
+	src.h = cast(int)frame.h;
 
 	SDL_Rect dst;
-	dst.x = cast(int)(pos.x-fr.cx+center.x);
-	dst.y = cast(int)(pos.y-fr.cy+center.y);
-	dst.w = cast(int)(fr.w*scale.x);
-	dst.h = cast(int)(fr.h*scale.y);
+	dst.x = cast(int)(position.x-frame.cx+center.x);
+	dst.y = cast(int)(position.y-frame.cy+center.y);
+	dst.w = cast(int)(frame.w*scale.x);
+	dst.h = cast(int)(frame.h*scale.y);
 
 	SDL_Point sdlcenter;
-	sdlcenter.x = cast(int)(center.x-fr.cx);
-	sdlcenter.y = cast(int)(center.y-fr.cy);
+	sdlcenter.x = cast(int)(center.x-frame.cx);
+	sdlcenter.y = cast(int)(center.y-frame.cy);
 
 	SDL_RenderCopyEx( current_renderer, cast(SDL_Texture*)tex.texture, &src, &dst, rotation, &sdlcenter, flip );
 }

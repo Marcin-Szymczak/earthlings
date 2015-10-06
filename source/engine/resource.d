@@ -12,7 +12,7 @@ abstract class ResourceManager(T)
 	T unavailable;
 	string pattern;
 
-	abstract void load( string );
+	abstract void loadFromFile( string );
 	abstract void free( string );
 
 	void setBasePath( string path )
@@ -29,7 +29,7 @@ abstract class ResourceManager(T)
 		{
 			try
 			{
-			load( name[2..$] );
+			loadFromFile( name[2..$] );
 			}
 			catch( Exception exc )
 			{

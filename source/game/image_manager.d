@@ -19,19 +19,13 @@ class TextureManager : ResourceManager!Texture
 	this()
 	{
 		pattern = "*.{bmp,png}";
-
-		// Create a surface with default R, G, B mask.
-		SDL_Surface* surface = SDL_CreateRGBSurface( 0, 64, 64, 24, 0xff000000, 0x00ff0000, 0x0000ff00, 0x000000ff );
-		SDL_FillRect( surface, null, SDL_MapRGB( surface.format, 255, 0, 255 ) );
-		unavailable = new Texture( surface );
-		SDL_FreeSurface( surface );
 	}
 
 	void setTransparentColor( Color color )
 	{
 		transparent = color;
 	}
-	override void load( string path )
+	override void loadFromFile( string path )
 	{
 		Image img = scoped!Image(path);
 		if( transparent != Color.blank )
@@ -49,5 +43,9 @@ class TextureManager : ResourceManager!Texture
 	{
 
 	}
-	alias resource this;
+}
+
+class ImageManager : ResourceManager!Image
+{
+
 }
