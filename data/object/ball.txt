@@ -1,0 +1,12 @@
+[Main]
+Name = ball
+Image = ball.png
+Lifetime = 10
+Bouncyness = 0.5
+Collision_Layer = 1
+Draw_Layer = 1
+
+[Animation]
+Animated = 1
+Duration = 3 // How much time does it take to complete the full animation
+Type = repeat // once, repeat, ping_pong

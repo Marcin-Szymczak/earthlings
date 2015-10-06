@@ -8,26 +8,18 @@
 	"buffers":
 	[
 		{
-			"file": "source/engine/graphics/font.d",
+			"file": "source/game/entity/human.d",
 			"settings":
 			{
-				"buffer_size": 2722,
+				"buffer_size": 1133,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": ".gitignore",
+			"file": "source/game/entity/package.d",
 			"settings":
 			{
-				"buffer_size": 52,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "data/fonts/small.cfg",
-			"settings":
-			{
-				"buffer_size": 63,
+				"buffer_size": 122,
 				"line_ending": "Unix"
 			}
 		},
@@ -35,71 +27,26 @@
 			"file": "source/game/core.d",
 			"settings":
 			{
-				"buffer_size": 1542,
+				"buffer_size": 1017,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "source/engine/core.d",
+			"contents": "module game.entity.manager;\n\nimport std.container.slist;\nimport game.entity.entity;\n\nclass EntityManager\n{\n	SList!Entity list;\n	int count;\n\n	void register( Entity ent )\n	{\n		list.insert( ent );\n		count++;\n	}\n\n	void remove( Entity ent )\n	{\n		\n	}\n\n	void update( double delta )\n	{\n		foreach( ent; list )\n		{\n			ent.update( delta );\n		}\n	}\n\n	void draw()\n	{\n		foreach( ent; list )\n		{\n			ent.draw();\n		}\n	}\n}",
+			"file": "source/game/entity/manager.d",
+			"file_size": 464,
+			"file_write_time": 130886959360131031,
 			"settings":
 			{
-				"buffer_size": 1142,
+				"buffer_size": 403,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "source/engine/time.d",
+			"file": "source/game/console.d",
 			"settings":
 			{
-				"buffer_size": 831,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/game/package.d",
-			"settings":
-			{
-				"buffer_size": 207,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/game/entity/worm.d",
-			"settings":
-			{
-				"buffer_size": 543,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/game/player.d",
-			"settings":
-			{
-				"buffer_size": 234,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/engine/graphics/image.d",
-			"settings":
-			{
-				"buffer_size": 8984,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/engine/graphics/draw.d",
-			"settings":
-			{
-				"buffer_size": 1603,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/engine/graphics/core.d",
-			"settings":
-			{
-				"buffer_size": 3769,
+				"buffer_size": 373,
 				"line_ending": "Unix"
 			}
 		}
@@ -144,12 +91,12 @@
 				"Build With: D - dub"
 			],
 			[
-				"close all",
-				"File: Close All"
-			],
-			[
 				"",
 				"DKit: Restart DCD Autocompletion Server"
+			],
+			[
+				"close all",
+				"File: Close All"
 			],
 			[
 				"DUB",
@@ -216,48 +163,64 @@
 	},
 	"expanded_folders":
 	[
-		"/home/marcin/Development/D/earthlings",
-		"/home/marcin/Development/D/earthlings/data",
-		"/home/marcin/Development/D/earthlings/data/fonts",
-		"/home/marcin/Development/D/earthlings/source",
-		"/home/marcin/Development/D/earthlings/source/engine",
-		"/home/marcin/Development/D/earthlings/source/engine/graphics",
-		"/home/marcin/Development/D/earthlings/source/game"
+		"/home/marcin/Development/earthlings",
+		"/home/marcin/Development/earthlings/source",
+		"/home/marcin/Development/earthlings/source/game",
+		"/home/marcin/Development/earthlings/source/game/entity"
 	],
 	"file_history":
 	[
+		"/home/marcin/Development/earthlings/source/game/entity/entity.d",
+		"/home/marcin/Dropbox/Linux/Love2D/mp2d/script/editor.lua",
+		"/home/marcin/Development/earthlings/source/game/entity/worm.d",
+		"/home/marcin/Development/D/earthlings/source/game/object.d",
+		"/home/marcin/Development/D/earthlings/DEVELOPMENT/object.d",
+		"/home/marcin/Development/D/earthlings/source/game/core.d",
+		"/home/marcin/Development/D/earthlings/source/app.d",
+		"/home/marcin/Development/D/earthlings/source/game/controller.d",
+		"/home/marcin/Development/D/earthlings/source/engine/hook.d",
+		"/home/marcin/Development/D/earthlings/source/game/player.d",
+		"/home/marcin/Development/D/earthlings/source/game/image_manager.d",
+		"/home/marcin/Development/D/earthlings/source/game/console.d",
+		"/home/marcin/Development/D/earthlings/source/engine/graphics/image.d",
+		"/home/marcin/Development/D/earthlings/source/engine/resource.d",
+		"/home/marcin/Development/D/earthlings/source/game/entity/worm.d",
+		"/home/marcin/Development/D/earthlings/data/object/ball.txt",
+		"/home/marcin/Development/D/earthlings/source/engine/math.d",
+		"/home/marcin/Development/D/earthlings/source/engine/graphics/draw.d",
+		"/home/marcin/Development/D/earthlings/source/engine/graphics/core.d",
+		"/home/marcin/Development/D/earthlings/data/object/ball.png",
+		"/home/marcin/Games/gusanos/SConstruct",
+		"/home/marcin/Games/gusanos/OmfgScript/omfg_script.cpp",
+		"/home/marcin/Games/gusanos/src/engine.cpp",
+		"/home/marcin/Games/gusanos/liero2gus/def.h",
+		"/home/marcin/Games/gusanos/Console/alias.cpp",
+		"/etc/NetworkManager/NetworkManager.conf",
+		"/home/marcin/Development/D/earthlings/core.exception.AssertError@source/engine/graphics/image.d",
+		"/home/marcin/Development/D/SpareChange/dub.sdl",
+		"/home/marcin/Development/D/earthlings/source/engine/graphics/font.d",
+		"/home/marcin/Development/D/earthlings/source/engine/time.d",
+		"/home/marcin/Development/D/earthlings/source/game/package.d",
+		"/home/marcin/Development/D/earthlings/data/fonts/small.cfg",
 		"/home/marcin/Development/D/earthlings/.gitignore",
 		"/home/marcin/Development/D/earthlings/object.Exception@source/engine/graphics/image.d",
-		"/home/marcin/Development/D/earthlings/data/fonts/small.cfg",
 		"/home/marcin/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
 		"/home/marcin/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
-		"/home/marcin/Development/D/earthlings/source/game/core.d",
 		"/home/marcin/Development/D/earthlings/data/maps/mars/settings.txt",
 		"/home/marcin/Development/D/earthlings/source/engine/event.d",
 		"/home/marcin/Development/D/earthlings/source/game/level/core.d",
 		"/home/marcin/Development/D/earthlings/source/game/defines.d",
-		"/home/marcin/Development/D/earthlings/source/game/entity/worm.d",
-		"/home/marcin/Development/D/earthlings/source/engine/math.d",
 		"/home/marcin/Development/D/earthlings/dub.json",
-		"/home/marcin/Development/D/earthlings/source/engine/graphics/core.d",
-		"/home/marcin/Development/D/earthlings/source/engine/graphics/image.d",
 		"/home/marcin/Development/D/earthlings/core.exception.RangeError@source/game/level/core.d",
-		"/home/marcin/Development/D/earthlings/source/engine/graphics/font.d",
 		"/home/marcin/Development/D/earthlings/source/game/entity/entity.d",
-		"/home/marcin/Development/D/earthlings/source/app.d",
-		"/home/marcin/Development/D/earthlings/source/engine/time.d",
-		"/home/marcin/Development/D/earthlings/source/engine/graphics/draw.d",
 		"/home/marcin/Development/D/earthlings/source/engine/core.d",
 		"/home/marcin/Dropbox/Public/test.txt",
 		"/home/marcin/Development/D/earthlings/std.format.FormatException@/usr/include/dlang/dmd/std/format.d",
 		"/home/marcin/.cache/.fr-ZQ4g9J/SDL2-2.0.3/include/SDL_render.h",
 		"/home/marcin/Development/D/earthlings/source/engine/graphics/package.d",
 		"/home/marcin/Development/D/earthlings/source/game/entity/package.d",
-		"/home/marcin/Development/D/earthlings/source/game/package.d",
 		"/home/marcin/Development/D/earthlings/source/game/level/loader.d",
 		"/home/marcin/Development/D/earthlings/source/game/level/package.d",
-		"/home/marcin/Development/D/earthlings/source/engine/resource.d",
-		"/home/marcin/Development/D/earthlings/source/game/image_manager.d",
 		"/home/marcin/Development/D/earthlings/object.Exception@source/engine/graphics/font.d",
 		"/home/marcin/.cache/.fr-ifh0zk/arch-gdm-theme-list/PKGBUILD",
 		"/home/marcin/.cache/.fr-gpQ3K9/arch-gdm-theme-list/GdmGreeterTheme.desktop",
@@ -334,12 +297,11 @@
 		"/home/marcin/.config/sublime-text-3/Packages/User/DKit.sublime-settings",
 		"/home/marcin/.config/sublime-text-3/Packages/DKit/DKit.sublime-settings",
 		"/home/marcin/Downloads/The Theory of Everything (2014) [1080p]/napisy_pl_poprawione.txt",
-		"/home/marcin/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
-		"/home/marcin/Development/D/breakdown/source/main.d"
+		"/home/marcin/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings"
 	],
 	"find":
 	{
-		"height": 37.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
@@ -353,6 +315,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Button",
+			"fr",
+			"pos",
 			"close",
 			"mat_surf",
 			"matimg",
@@ -420,58 +385,30 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "source/engine/graphics/font.d",
+					"file": "source/game/entity/human.d",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2722,
+						"buffer_size": 1133,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								656,
-								656
+								25,
+								25
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/D/D.tmLanguage",
 							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 502.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": ".gitignore",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 52,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -481,83 +418,25 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "data/fonts/small.cfg",
+					"buffer": 1,
+					"file": "source/game/entity/package.d",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 63,
+						"buffer_size": 122,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								63,
-								63
+								122,
+								122
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "source/game/core.d",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1542,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1050,
-								1050
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/D/D.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 540.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "source/engine/core.d",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 1142,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/D/D.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/D/D.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -567,20 +446,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "source/engine/time.d",
+					"buffer": 2,
+					"file": "source/game/core.d",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 831,
+						"buffer_size": 1017,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								684,
-								684
+								1017,
+								1017
 							]
 						],
 						"settings":
@@ -589,182 +468,66 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 450.0,
+						"translation.y": 493.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "source/game/entity/manager.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 403,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								246,
+								246
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "source/game/console.d",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 373,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								41,
+								41
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "source/game/package.d",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 207,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								207,
-								207
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/D/D.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "source/game/entity/worm.d",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 543,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								288,
-								288
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/D/D.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "source/game/player.d",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 234,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								47,
-								47
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/D/D.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "source/engine/graphics/image.d",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8984,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2434,
-								2434
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/D/D.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1641.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "source/engine/graphics/draw.d",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1603,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								158,
-								158
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/D/D.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "source/engine/graphics/core.d",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3769,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								207,
-								207
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/D/D.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
 					"type": "text"
 				}
 			]
