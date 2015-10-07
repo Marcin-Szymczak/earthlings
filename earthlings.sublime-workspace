@@ -8,6 +8,7 @@
 	"buffers":
 	[
 		{
+<<<<<<< HEAD
 			"file": "source/game/entity/human.d",
 			"settings":
 			{
@@ -39,14 +40,43 @@
 			"settings":
 			{
 				"buffer_size": 403,
+=======
+			"file": "source/game/entity/worm.d",
+			"settings":
+			{
+				"buffer_size": 1131,
+>>>>>>> 31943a9a57f5c7d72d102abdeeedecef991d61a9
 				"line_ending": "Unix"
 			}
 		},
 		{
+<<<<<<< HEAD
 			"file": "source/game/console.d",
 			"settings":
 			{
 				"buffer_size": 373,
+=======
+			"file": "/home/marcin/Dropbox/Linux/Love2D/mp2d/script/editor.lua",
+			"settings":
+			{
+				"buffer_size": 5832,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/game/player.d",
+			"settings":
+			{
+				"buffer_size": 220,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/game/entity/entity.d",
+			"settings":
+			{
+				"buffer_size": 230,
+>>>>>>> 31943a9a57f5c7d72d102abdeeedecef991d61a9
 				"line_ending": "Unix"
 			}
 		}
@@ -163,6 +193,7 @@
 	},
 	"expanded_folders":
 	[
+<<<<<<< HEAD
 		"/home/marcin/Development/earthlings",
 		"/home/marcin/Development/earthlings/source",
 		"/home/marcin/Development/earthlings/source/game",
@@ -173,6 +204,15 @@
 		"/home/marcin/Development/earthlings/source/game/entity/entity.d",
 		"/home/marcin/Dropbox/Linux/Love2D/mp2d/script/editor.lua",
 		"/home/marcin/Development/earthlings/source/game/entity/worm.d",
+=======
+		"/home/marcin/Development/D/earthlings",
+		"/home/marcin/Development/D/earthlings/source",
+		"/home/marcin/Development/D/earthlings/source/game",
+		"/home/marcin/Development/D/earthlings/source/game/entity"
+	],
+	"file_history":
+	[
+>>>>>>> 31943a9a57f5c7d72d102abdeeedecef991d61a9
 		"/home/marcin/Development/D/earthlings/source/game/object.d",
 		"/home/marcin/Development/D/earthlings/DEVELOPMENT/object.d",
 		"/home/marcin/Development/D/earthlings/source/game/core.d",
@@ -315,7 +355,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+<<<<<<< HEAD
 			"Button",
+=======
+>>>>>>> 31943a9a57f5c7d72d102abdeeedecef991d61a9
 			"fr",
 			"pos",
 			"close",
@@ -390,19 +433,32 @@
 			[
 				{
 					"buffer": 0,
+<<<<<<< HEAD
 					"file": "source/game/entity/human.d",
 					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 1133,
+=======
+					"file": "source/game/entity/worm.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1131,
+>>>>>>> 31943a9a57f5c7d72d102abdeeedecef991d61a9
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
+<<<<<<< HEAD
 								25,
 								25
+=======
+								573,
+								573
+>>>>>>> 31943a9a57f5c7d72d102abdeeedecef991d61a9
 							]
 						],
 						"settings":
@@ -411,13 +467,47 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
+<<<<<<< HEAD
 						"translation.y": 0.0,
+=======
+						"translation.y": 495.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/marcin/Dropbox/Linux/Love2D/mp2d/script/editor.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5832,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1513,
+								1513
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 675.0,
+>>>>>>> 31943a9a57f5c7d72d102abdeeedecef991d61a9
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
+<<<<<<< HEAD
 					"buffer": 1,
 					"file": "source/game/entity/package.d",
 					"semi_transient": false,
@@ -481,14 +571,27 @@
 					"settings":
 					{
 						"buffer_size": 403,
+=======
+					"buffer": 2,
+					"file": "source/game/player.d",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 220,
+>>>>>>> 31943a9a57f5c7d72d102abdeeedecef991d61a9
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
+<<<<<<< HEAD
 								246,
 								246
+=======
+								0,
+								0
+>>>>>>> 31943a9a57f5c7d72d102abdeeedecef991d61a9
 							]
 						],
 						"settings":
@@ -499,6 +602,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+<<<<<<< HEAD
 					"stack_index": 1,
 					"type": "text"
 				},
@@ -509,14 +613,31 @@
 					"settings":
 					{
 						"buffer_size": 373,
+=======
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "source/game/entity/entity.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 230,
+>>>>>>> 31943a9a57f5c7d72d102abdeeedecef991d61a9
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
+<<<<<<< HEAD
 								41,
 								41
+=======
+								159,
+								159
+>>>>>>> 31943a9a57f5c7d72d102abdeeedecef991d61a9
 							]
 						],
 						"settings":
