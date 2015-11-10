@@ -24,7 +24,7 @@ void initialize()
 	texture_manager.setBasePath( path_graphics );
 	texture_manager.loadDirectory( "." );
 
-	current_level = new Level( "mars" );
+	current_level = new Level( "movementtest1" );
 
 	entity_manager = new EntityManager;
 

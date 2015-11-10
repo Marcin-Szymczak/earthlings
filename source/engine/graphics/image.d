@@ -182,10 +182,15 @@ struct Atlas
 	{
 		import std.math;
 
+		angle = angle%(PI);
+		//writefln( "%s", angle/PI*180 );
+
+		import std.stdio;
+	
 		double ang_per_frame = PI/rows;
 		int id = cast(int)( (angle+PI_2)/ang_per_frame )*columns;
 		id += offset%columns;
-
+		//writefln( "ID: %s", id );
 		return getFrame( id );
 	}
 
@@ -430,6 +435,8 @@ void draw( 	const Texture tex,
 			Vector2f center = Vector2f(0,0),
 			Flip flip = Flip.None )
 {
+	import std.math;
+
 	if( !tex.atlas )
 		throw new Exception( "Can not draw a texture's frame if it has no atlas!");
 	
@@ -443,8 +450,8 @@ void draw( 	const Texture tex,
 	src.h = cast(int)frame.h;
 
 	SDL_Rect dst;
-	dst.x = cast(int)(position.x-frame.cx+center.x);
-	dst.y = cast(int)(position.y-frame.cy+center.y);
+	dst.x = cast(int)(position.x-(frame.cx+center.x)*scale.x);
+	dst.y = cast(int)(position.y-(frame.cy+center.y)*scale.y);
 	dst.w = cast(int)(frame.w*scale.x);
 	dst.h = cast(int)(frame.h*scale.y);
 
