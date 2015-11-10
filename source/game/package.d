@@ -1,6 +1,7 @@
 module game;
 
 public import game.core;
+public import game.controller;
 public import game.defines;
 public import game.entity;
 public import game.image_manager;

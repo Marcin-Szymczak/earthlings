@@ -27,6 +27,9 @@ enum Init : int
 	Everything = SDL_INIT_EVERYTHING ///
 }
 
+enum SDL_Released = 0; /// Useful SDL constant when dealing with input
+enum SDL_Pressed = 1; /// ditto
+
 /+++
 	Initialize the engine.
 

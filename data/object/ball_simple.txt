@@ -1,0 +1,6 @@
+name = ball
+image = ball.png
+lifetime = 10
+bouncyness = 0.5
+collision_layer = 1
+draw_layer = 1

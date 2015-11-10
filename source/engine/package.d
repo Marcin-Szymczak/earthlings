@@ -9,6 +9,7 @@ module engine;
 
 public import engine.core; import core = engine.core;
 public import engine.event; import event = engine.event;
+public import engine.hook; import hook = engine.hook;
 public import engine.math; import math = engine.math;
 public import engine.resource;
 public import engine.time;

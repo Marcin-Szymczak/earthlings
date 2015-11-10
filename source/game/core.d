@@ -8,14 +8,16 @@ import std.stdio;
 
 import engine;
 import game;
+import game.entity.particle;
+
 
 TextureManager texture_manager;
 EntityManager entity_manager;
+Player local_player;
+Texture simple_text;
+
 double TIME=0;
 
-Player local_player;
-
-Texture simple_text;
 void initialize()
 {
 	texture_manager = new TextureManager;
@@ -31,9 +33,15 @@ void initialize()
 
 	auto ent = new Human();
 	entity_manager.register( ent );
-	local_player.entity = ent;
 
-	local_player.entity.position = Vector2f( 500, 50 );
+	local_player.controller = new KeyboardController( local_player );
+	local_player.takeControl( ent );
+	local_player.entity.position = Vector2f( 150, 150 );
+}
+
+void keyEvent( KeyboardEvent ev )
+{
+	Hook_KeyEvent.call( ev );
 }
 
 void update(double delta)

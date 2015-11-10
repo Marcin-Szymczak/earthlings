@@ -2,6 +2,11 @@ module engine.event;
 
 import derelict.sdl2.sdl;
 
+/+++
+	A structure representing an event
+
+	It is a mapping of original SDL2's event
++++/
 struct Event
 {
 	SDL_Event _event;
@@ -50,6 +55,8 @@ struct Event
 
 	}
 }
+
+alias KeyboardEvent = SDL_KeyboardEvent;
 
 int poll( ref Event event )
 {

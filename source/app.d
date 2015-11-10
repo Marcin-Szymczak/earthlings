@@ -11,7 +11,6 @@ void main()
 	auto renderer = new Renderer( window );
 
 	graphics.setRenderer( renderer );
-
 	game.initialize();
 
 	Event event;
@@ -36,9 +35,17 @@ void main()
 						default: break;
 					}
 				break;
+
+				case KeyPressed:
+				case KeyReleased:
+					game.keyEvent( event.key );
+				break;
+
+
 				default: break;
 			}
 		}
+		
 		double delta = timer.seconds();
 		timer.start;
 
