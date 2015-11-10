@@ -137,9 +137,29 @@ public:
 		}
 	}
 
+	void erase( Vector2f pos, Color col )
+	{
+		fg_img.setPixel( cast(int)pos.x, cast(int)pos.y, Color( 0, 0, 0, 0 ) );
+	}
+
+	Vector2f dropDown( Vector2f pos )
+	{
+		while( !isSolid( pos ) )
+		{
+			pos.y++;
+		}	
+		pos.y--;
+		return pos;
+	}
+
 }
 
 bool isSolid( Vector2f position )
 {
 	return current_level.isSolid( position );
+}
+
+Vector2f dropDown( Vector2f position )
+{
+	return current_level.dropDown( position );
 }

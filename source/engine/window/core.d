@@ -1,5 +1,5 @@
 /+++
-	Window core
+	Window's core functions
 +++/
 module engine.window.core;
 
@@ -21,8 +21,8 @@ class Window
 	+++/
 	enum Position : int
 	{
-		Undefined = SDL_WINDOWPOS_UNDEFINED,
-		Centered = SDL_WINDOWPOS_CENTERED,
+		Undefined = SDL_WINDOWPOS_UNDEFINED, ///
+		Centered = SDL_WINDOWPOS_CENTERED, ///
 	};
 	/+++
 		Create a window.
@@ -37,25 +37,25 @@ class Window
 		if( !_window )
 			throw new Exception( "Couldn't create a renderer" );
 	}
-
+	///Window's destructor
 	~this()
 	{
 		SDL_DestroyWindow( _window );
 	}
 	/+++
-		Set the window's icon
+		Set the window's icon from a SDL_Surface
 	+++/
 	void setIcon( SDL_Surface* icon )
 	{
 		SDL_SetWindowIcon( _window, icon );
 	}
-	///
+	/// Set the window's icon from an Image
 	void setIcon( Image img )
 	{
 		SDL_SetWindowIcon( _window, img );
 	}
 	/+++
-		Set the window's icon specyfing a path to image.
+		Set the window's icon from a file name
 	+++/
 	void setIcon( string path )
 	{

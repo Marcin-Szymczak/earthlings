@@ -1,8 +1,11 @@
 module game.defines;
 
+import engine.math;
+
 enum path_graphics = "data/graphics/";
 enum path_levels = "data/maps/";
+enum path_objects = "data/objects/";
 
-enum float Gravity_Constant = 9.81;
-enum float meters_per_pixel = 1/6f;
-enum float Gravity_Acceleration = Gravity_Constant/meters_per_pixel;
+enum Gravity_Constant = 9.81;
+enum meters_per_pixel = 1/8f;
+enum Gravity_Acceleration = Vector2f( 0, Gravity_Constant/meters_per_pixel );

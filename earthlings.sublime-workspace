@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"A",
+				"AIM_HEIGHT	variable"
+			],
+			[
 				"n",
 				"n"
 			],
@@ -16,10 +20,58 @@
 	"buffers":
 	[
 		{
+			"file": "source/game/entity/particle.d",
+			"settings":
+			{
+				"buffer_size": 1194,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/game/particle_type.d",
+			"settings":
+			{
+				"buffer_size": 6573,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/app.d",
+			"settings":
+			{
+				"buffer_size": 1058,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/game/level/core.d",
+			"settings":
+			{
+				"buffer_size": 2636,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "source/game/entity/human.d",
 			"settings":
 			{
-				"buffer_size": 2631,
+				"buffer_size": 3741,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/engine/parser.d",
+			"settings":
+			{
+				"buffer_size": 1646,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "krawczykideasguy",
+			"settings":
+			{
+				"buffer_size": 118,
 				"line_ending": "Unix"
 			}
 		},
@@ -27,55 +79,47 @@
 			"file": "source/engine/graphics/image.d",
 			"settings":
 			{
-				"buffer_size": 9933,
+				"buffer_size": 11459,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "source/game/defines.d",
+			"file": "source/game/core.d",
 			"settings":
 			{
-				"buffer_size": 235,
+				"buffer_size": 1523,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "source/game/player.d",
+			"file": "source/engine/graphics/core.d",
 			"settings":
 			{
-				"buffer_size": 638,
+				"buffer_size": 3859,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "source/game/controller.d",
+			"file": "data/objects/grenade.txt",
 			"settings":
 			{
-				"buffer_size": 1435,
+				"buffer_size": 212,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "source/engine/keycode.d",
+			"file": "data/objects/smoke.txt",
 			"settings":
 			{
-				"buffer_size": 1570,
+				"buffer_size": 116,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "source/game/package.d",
+			"file": "source/engine/math.d",
 			"settings":
 			{
-				"buffer_size": 238,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/engine/event.d",
-			"settings":
-			{
-				"buffer_size": 1490,
+				"buffer_size": 1383,
 				"line_ending": "Unix"
 			}
 		}
@@ -127,8 +171,8 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 373.0,
-		"last_filter": "",
+		"height": 398.0,
+		"last_filter": "run",
 		"selected_items":
 		[
 			[
@@ -211,30 +255,73 @@
 		"/home/marcin/Dropbox/Development/D/earthlings",
 		"/home/marcin/Dropbox/Development/D/earthlings/source",
 		"/home/marcin/Dropbox/Development/D/earthlings/source/engine",
-		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/graphics",
 		"/home/marcin/Dropbox/Development/D/earthlings/source/game",
 		"/home/marcin/Dropbox/Development/D/earthlings/source/game/entity",
 		"/home/marcin/Dropbox/Development/D/earthlings/source/game/level"
 	],
 	"file_history":
 	[
+		"/home/marcin/Dropbox/Development/D/nowyproj/dub.sdl",
+		"/home/marcin/Dropbox/Development/D/earthlings/dub.json",
+		"/home/marcin/Dropbox/Development/Korepetycje/Szurkowskie/gps.txt",
+		"/home/marcin/.bashrc",
+		"/home/marcin/Dropbox/Development/Korepetycje/Adam Pachałko/projekt2.cpp",
+		"/tmp/POP_2015_12_15_projekt_1_Niewiadomska_Małgorzata_IBM_3_160803.cpp",
+		"/run/media/marcin/38A2-C492/kajakarstwo.xml",
+		"/home/marcin/Dropbox/Fundusze.txt",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/package.d",
+		"/home/marcin/.cache/.fr-KnrNhJ/main.cpp",
+		"/home/marcin/.cache/.fr-BMaCFy/biblioteka.h",
+		"/home/marcin/.cache/.fr-ZZPz5I/biblioteka.h",
+		"/home/marcin/.cache/.fr-GCmJOA/biblioteka.cpp",
+		"/home/marcin/.cache/.fr-5KFiI4/main.cpp",
+		"/home/marcin/Dropbox/Development/Korepetycje/Gosia Niewiadomska/kobietymezczyzni.cpp",
+		"/home/marcin/Dropbox/Development/Korepetycje/Gosia Niewiadomska/nazwapliku.txt",
+		"/home/marcin/Dropbox/Development/Korepetycje/Gosia Niewiadomska/osoby.txt",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/core.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/level/core.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/entity/human.d",
+		"/home/marcin/Dropbox/Development/Korepetycje/Karolina Wszeborowska/ProjektB-Ostateczny/liczby_1000.txt",
+		"/home/marcin/Dropbox/Development/Korepetycje/Karolina Wszeborowska/ProjektB-Ostateczny/projektb.cpp",
+		"/home/marcin/Dropbox/Development/Korepetycje/Karolina Wszeborowska/ProjektB-Ostateczny/liczby_10.txt",
+		"/home/marcin/Dropbox/Development/Korepetycje/Karolina Wszeborowska/ProjektB-Ostateczny/liczby_100.txt",
+		"/home/marcin/Dropbox/Development/D/earthlings/data/objects/grenade.txt",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/weapon.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/defines.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/entity/manager.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/entity/particle.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/math.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/graphics/image.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/parser.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/controller.d",
+		"/home/marcin/Dropbox/Development/Korepetycje/Agata Czernicka/to.cpp",
+		"/tmp/osoby2-3.cpp",
+		"/tmp/osoby2-2.cpp",
+		"/tmp/osoby2-1.cpp",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/resource.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/image_manager.d",
+		"/tmp/pop-zadanie-1.cpp",
+		"/tmp/osoby2.cpp",
+		"/home/marcin/Dropbox/Development/Korepetycje/Agata Czarniecka/pop-zadanie.cpp",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/entity/worm.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/entity/package.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/player.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/keycode.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/event.d",
+		"/home/marcin/Dropbox/Development/Korepetycje/Karolina Wszeborowska/ProjektC/projektc.cpp",
+		"/home/marcin/Dropbox/Development/D/earthlings/data/object/ball_simple.txt",
+		"/home/marcin/Dropbox/Development/D/earthlings/data/maps/mars/settings.txt",
+		"/home/marcin/.cache/.fr-WYS8IX/Readme.txt",
 		"/home/marcin/Dropbox/Development/D/earthlings/source/app.d",
 		"/home/marcin/Dropbox/Development/D/earthlings/source/game/entity/entity.d",
-		"/home/marcin/Dropbox/Development/D/earthlings/source/game/core.d",
 		"/tmp/SDL_keycode.h",
 		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/core.d",
 		"/tmp/SDL_events.h",
 		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/hook.d",
 		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/package.d",
-		"/home/marcin/Dropbox/Development/D/earthlings/source/game/level/core.d",
-		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/parser.d",
-		"/home/marcin/Dropbox/Development/D/earthlings/source/game/controller.d",
-		"/home/marcin/Dropbox/Development/D/earthlings/source/game/entity/human.d",
 		"/home/marcin/Dropbox/Development/D/earthlings/data/object/ball.txt",
-		"/home/marcin/Dropbox/Development/D/earthlings/data/object/ball_simple.txt",
 		"/home/marcin/Dropbox/Development/Korepetycje/Marcin Adamkiewicz/funkcje.cpp",
 		"/home/marcin/Dropbox/Development/Korepetycje/Zadania/Hi-Lo/hilo.cpp",
-		"/home/marcin/Dropbox/Development/D/earthlings/source/game/entity/particle.d",
 		"/home/marcin/.cache/.fr-kGWTIY/Zadanie1_tablica.cpp",
 		"/home/marcin/Dropbox/Development/Korepetycje/Zadania/Wieża Hanoi/hanoi.cpp",
 		"/home/marcin/Dropbox/Development/Korepetycje/Karolina Wszeborowska/ProjektB/projektb.cpp",
@@ -301,51 +388,7 @@
 		"/home/marcin/Development/earthlings/source/game/entity/package.d",
 		"/home/marcin/Development/earthlings/source/game/entity/human.d",
 		"/home/marcin/Development/earthlings/source/game/entity/entity.d",
-		"/home/marcin/Dropbox/Linux/Love2D/mp2d/script/editor.lua",
-		"/home/marcin/Development/earthlings/source/game/entity/worm.d",
-		"/home/marcin/Development/D/earthlings/source/game/object.d",
-		"/home/marcin/Development/D/earthlings/DEVELOPMENT/object.d",
-		"/home/marcin/Development/D/earthlings/source/game/core.d",
-		"/home/marcin/Development/D/earthlings/source/app.d",
-		"/home/marcin/Development/D/earthlings/source/game/controller.d",
-		"/home/marcin/Development/D/earthlings/source/engine/hook.d",
-		"/home/marcin/Development/D/earthlings/source/game/player.d",
-		"/home/marcin/Development/D/earthlings/source/game/image_manager.d",
-		"/home/marcin/Development/D/earthlings/source/game/console.d",
-		"/home/marcin/Development/D/earthlings/source/engine/graphics/image.d",
-		"/home/marcin/Development/D/earthlings/source/engine/resource.d",
-		"/home/marcin/Development/D/earthlings/source/game/entity/worm.d",
-		"/home/marcin/Development/D/earthlings/data/object/ball.txt",
-		"/home/marcin/Development/D/earthlings/source/engine/math.d",
-		"/home/marcin/Development/D/earthlings/source/engine/graphics/draw.d",
-		"/home/marcin/Development/D/earthlings/source/engine/graphics/core.d",
-		"/home/marcin/Development/D/earthlings/data/object/ball.png",
-		"/home/marcin/Games/gusanos/SConstruct",
-		"/home/marcin/Games/gusanos/OmfgScript/omfg_script.cpp",
-		"/home/marcin/Games/gusanos/src/engine.cpp",
-		"/home/marcin/Games/gusanos/liero2gus/def.h",
-		"/home/marcin/Games/gusanos/Console/alias.cpp",
-		"/etc/NetworkManager/NetworkManager.conf",
-		"/home/marcin/Development/D/earthlings/core.exception.AssertError@source/engine/graphics/image.d",
-		"/home/marcin/Development/D/SpareChange/dub.sdl",
-		"/home/marcin/Development/D/earthlings/source/engine/graphics/font.d",
-		"/home/marcin/Development/D/earthlings/source/engine/time.d",
-		"/home/marcin/Development/D/earthlings/source/game/package.d",
-		"/home/marcin/Development/D/earthlings/data/fonts/small.cfg",
-		"/home/marcin/Development/D/earthlings/.gitignore",
-		"/home/marcin/Development/D/earthlings/object.Exception@source/engine/graphics/image.d",
-		"/home/marcin/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
-		"/home/marcin/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
-		"/home/marcin/Development/D/earthlings/data/maps/mars/settings.txt",
-		"/home/marcin/Development/D/earthlings/source/engine/event.d",
-		"/home/marcin/Development/D/earthlings/source/game/level/core.d",
-		"/home/marcin/Development/D/earthlings/source/game/defines.d",
-		"/home/marcin/Development/D/earthlings/dub.json",
-		"/home/marcin/Development/D/earthlings/core.exception.RangeError@source/game/level/core.d",
-		"/home/marcin/Development/D/earthlings/source/game/entity/entity.d",
-		"/home/marcin/Development/D/earthlings/source/engine/core.d",
-		"/home/marcin/Dropbox/Public/test.txt",
-		"/home/marcin/Development/D/earthlings/std.format.FormatException@/usr/include/dlang/dmd/std/format.d"
+		"/home/marcin/Dropbox/Linux/Love2D/mp2d/script/editor.lua"
 	],
 	"find":
 	{
@@ -363,6 +406,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"delta",
+			"lta;\n		if(on_ground)",
 			"WALK_SPEED",
 			"true",
 			"WYSOKOSC",
@@ -439,118 +484,120 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 5,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "source/game/entity/human.d",
+					"file": "source/game/entity/particle.d",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2631,
+						"buffer_size": 1194,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1951,
-								1951
+								592,
+								592
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/D/D.tmLanguage",
 							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1313.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "source/engine/graphics/image.d",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9933,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8413,
-								8413
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/D/D.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 5700.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "source/game/defines.d",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 235,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								218,
-								218
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/D/D.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "source/game/player.d",
+					"buffer": 1,
+					"file": "source/game/particle_type.d",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 638,
+						"buffer_size": 6573,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								404,
-								404
+								3905,
+								3905
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/D/D.tmLanguage"
+							"syntax": "Packages/D/D.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 90.0,
+						"translation.y": 2646.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "source/app.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1058,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								297,
+								297
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 462.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "source/game/level/core.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2636,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2345,
+								2345
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1696.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
@@ -558,19 +605,19 @@
 				},
 				{
 					"buffer": 4,
-					"file": "source/game/controller.d",
+					"file": "source/game/entity/human.d",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1435,
+						"buffer_size": 3741,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								194,
-								194
+								170,
+								170
 							]
 						],
 						"settings":
@@ -579,85 +626,84 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 405.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "source/engine/parser.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1646,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								676,
+								676
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 252.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "source/engine/keycode.d",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1570,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								53,
-								53
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/D/D.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
 					"buffer": 6,
-					"file": "source/game/package.d",
+					"file": "krawczykideasguy",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 238,
+						"buffer_size": 118,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								69,
-								69
+								118,
+								118
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/D/D.tmLanguage"
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 7,
-					"file": "source/engine/event.d",
+					"file": "source/engine/graphics/image.d",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1490,
+						"buffer_size": 11459,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1417,
-								1417
+								6819,
+								6819
 							]
 						],
 						"settings":
@@ -666,10 +712,153 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 585.0,
+						"translation.y": 6708.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "source/game/core.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1523,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1381,
+								1381
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 672.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "source/engine/graphics/core.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3859,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2931,
+								2931
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2100.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "data/objects/grenade.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 212,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8,
+								8
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "data/objects/smoke.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 116,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								116,
+								116
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "source/engine/math.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1383,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								423,
+								423
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 150.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
 					"type": "text"
 				}
 			]

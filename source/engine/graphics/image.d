@@ -101,17 +101,11 @@ struct Atlas
 		Generates an image atlas data
 
 		The specified image's first row and first column are special.
-		
 		Top left corner HAS to be of color white( 255, 255, 255 )
-
 		They should be mostly white( 255, 255, 255 ).
-
 		Every black( 0,0,0 ) point specifies end of current frame
-
 		Every red( 255,0,0 ) point specifies the center point of current frame
-
 		If you want the center to be at the end of the frame, use blue( 0, 0, 255 ) instead.
-
 		There should be only ONE center point for each frame ( duh )
 	+++/
 	void generate( Image image )
@@ -156,6 +150,9 @@ struct Atlas
 		Retrieve a frame from the image atlas
 	
 		The frames are ordered left to right, row after row
+
+		Returns:
+			A frame object of the desired frame id
 	+++/
 	Frame getFrame( int index ) const
 	{
@@ -181,9 +178,18 @@ struct Atlas
 	Frame getAngleFrame( double angle, int offset=0 ) const
 	{
 		import std.math;
+		import std.stdio;
 
+		if( angle >= PI_2 && angle <= 3*PI_2 ){
+			angle = PI - angle; 
+		}else{
+			angle = angle%PI;
+		}
+		
 		double ang_per_frame = PI/rows;
-		int id = cast(int)( (angle+PI_2)/ang_per_frame )*columns;
+		int row = cast(int)( (angle+PI_2)/ang_per_frame );
+		int id = row*columns;
+
 		id += offset%columns;
 
 		return getFrame( id );
@@ -263,6 +269,61 @@ public:
 	{
 		SDL_SetColorKey( surface, transparent, SDL_MapRGB( surface.format, color.r, color.g, color.b ) );
 	}
+
+	mixin template pixelComponent( string component )
+	{
+		static if( component == "red" )
+		{
+			uint mask = format.Rmask;
+			uint shift = format.Rshift;
+			uint loss = format.Rloss;
+		}
+		else static if( component == "green" )
+		{
+			uint mask = format.Gmask;
+			uint shift = format.Gshift;
+			uint loss = format.Gloss;
+		}
+		else static if( component == "blue" )
+		{
+			uint mask = format.Bmask;
+			uint shift = format.Bshift;
+			uint loss = format.Bloss;
+		}
+		else static if( component == "alpha" )
+		{
+			uint mask = format.Amask;
+			uint shift = format.Ashift;
+			uint loss = format.Aloss;
+		}
+		else
+		{
+			static assert(0, "unknown color component!");
+		}
+	}
+
+	/+
+		Method of color extracting taken from SDL2's wiki
+		https://wiki.libsdl.org/SDL_PixelFormat
+	+/
+	ubyte getPixelComponent(string component)( uint pixel, SDL_PixelFormat* format )
+	{
+		mixin pixelComponent!( component );
+		uint temp = pixel & mask;
+		temp >>= shift;
+		temp <<= loss;
+		return cast(ubyte) temp;
+	}
+	/+
+		Method of color extracting taken from SDL2's wiki
+		https://wiki.libsdl.org/SDL_PixelFormat
+	+/
+	void setPixelComponent(string component)( uint pixel, uint mask, uint shift, uint loss )
+	{
+		mixin( pixelComponent( component ) );
+		uint temp = !0 & mask;
+		writeln( cast(ubyte[4])temp );
+	}
 	/+++
 		Get color at specified coordinates.
 
@@ -279,28 +340,23 @@ public:
 		uint pixel = *(cast(uint*)ptr);
 		uint temp;
 		Color col;
-		
-		/+
-			Method of color extracting taken from SDL2's wiki
-			https://wiki.libsdl.org/SDL_PixelFormat
-		+/
-		ubyte getPixelComponent( uint mask, uint shift, uint loss)
-		{
-			uint temp = pixel & mask;
-			temp >>= shift;
-			temp <<= loss;
-			return cast(ubyte) temp;
-		}
 
-		col.r = getPixelComponent( format.Rmask, format.Rshift, format.Rloss );
-		col.g = getPixelComponent( format.Gmask, format.Gshift, format.Gloss );
-		col.b = getPixelComponent( format.Bmask, format.Bshift, format.Bloss );
+		col.r = getPixelComponent!"red"( pixel, format );
+		col.g = getPixelComponent!"green"( pixel, format );
+		col.b = getPixelComponent!"blue"( pixel, format );
 		if( format.Amask == 0 )
 			col.a = 255;
 		else
-			col.a = getPixelComponent( format.Amask, format.Ashift, format.Aloss );
+			col.a = getPixelComponent!"alpha"( pixel, format );
 
 		return col;
+	}
+
+	void setPixel( int x, int y, Color color )
+	{
+		auto format = surface.format;
+		ubyte* ptr = cast(ubyte*)surface.pixels;
+
 	}
 
 	/+++
@@ -421,6 +477,15 @@ void draw( 	const Texture tex,
 
 /+++
 	Draw a texture's frame from its atlas
+
+	Params:
+		tex = the texture to be drawn
+		frame = the portion of texture to be drawn
+		position = the position
+		rotation = angle in radians
+		scale = scale
+		center = rotation-axis and the center of image
+		flip = should the image be flipped?
 +++/
 void draw( 	const Texture tex,
 			const Frame frame,
@@ -430,12 +495,14 @@ void draw( 	const Texture tex,
 			Vector2f center = Vector2f(0,0),
 			Flip flip = Flip.None )
 {
+	import std.math;
+
 	if( !tex.atlas )
 		throw new Exception( "Can not draw a texture's frame if it has no atlas!");
 	
 	/+ Apply current transformations +/
 	position = current_transformation.get( position );
-
+	
 	SDL_Rect src;
 	src.x = cast(int)frame.x;
 	src.y = cast(int)frame.y;
@@ -443,8 +510,8 @@ void draw( 	const Texture tex,
 	src.h = cast(int)frame.h;
 
 	SDL_Rect dst;
-	dst.x = cast(int)(position.x-frame.cx+center.x);
-	dst.y = cast(int)(position.y-frame.cy+center.y);
+	dst.x = cast(int)(position.x-(frame.cx+center.x)*scale.x);
+	dst.y = cast(int)(position.y-(frame.cy+center.y)*scale.y);
 	dst.w = cast(int)(frame.w*scale.x);
 	dst.h = cast(int)(frame.h*scale.y);
 

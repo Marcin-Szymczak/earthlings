@@ -11,6 +11,7 @@ void main()
 	auto renderer = new Renderer( window );
 
 	graphics.setRenderer( renderer );
+	
 	game.initialize();
 
 	Event event;

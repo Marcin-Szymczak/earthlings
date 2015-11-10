@@ -1,5 +1,7 @@
 module engine.math;
 
+import std.math;
+
 alias Vector2f = Vector2!float;
 alias Vector2d = Vector2!double;
 
@@ -9,17 +11,22 @@ struct Vector2(T)
 	T y;
 
 	@property
-	T length()
+	inout(T) length() inout
 	{
 		import std.math;
 
 		return sqrt( x^^2 + y^^2 );
 	}
-	@property
-	Vector2f!T normalize()
+	
+	inout(Vector2!T) normalize() inout
 	{
-		T len = length;
-		return Vector2f!T( x/length, y/length );
+		inout(T) len = length;
+		return Vector2!T( x/length, y/length );
+	}
+
+	inout(Vector2!T) floor() inout
+	{
+		return Vector2!T( .floor(x), .floor(y) );
 	}
 
 	Vector2!T opUnary( string s )()
@@ -50,4 +57,22 @@ struct Vector2(T)
 	{
 		this = opBinary!op( rhs );
 	}
+
+	Vector2!C opCast(C)()
+	{
+		Vector2!C vec;
+		vec.x = cast(C)x;
+		vec.y = cast(C)y;
+
+		return vec;
+	}
+}
+
+T clamp(T)(T value, T min, T max )
+{
+	if( value < min )
+		return min;
+	if( value > max )
+		return max;
+	return value;
 }
