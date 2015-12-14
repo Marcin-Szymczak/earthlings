@@ -16,87 +16,15 @@
 	"buffers":
 	[
 		{
-			"file": "source/game/entity/human.d",
+			"file": "source/app.d",
 			"settings":
 			{
-				"buffer_size": 3326,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/engine/math.d",
-			"settings":
-			{
-				"buffer_size": 1158,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/engine/graphics/image.d",
-			"settings":
-			{
-				"buffer_size": 10082,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/game/defines.d",
-			"settings":
-			{
-				"buffer_size": 235,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/game/player.d",
-			"settings":
-			{
-				"buffer_size": 638,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/game/controller.d",
-			"settings":
-			{
-				"buffer_size": 1435,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/game/core.d",
-			"settings":
-			{
-				"buffer_size": 1196,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/engine/keycode.d",
-			"settings":
-			{
-				"buffer_size": 1570,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/game/package.d",
-			"settings":
-			{
-				"buffer_size": 238,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/engine/event.d",
-			"settings":
-			{
-				"buffer_size": 1490,
+				"buffer_size": 1058,
 				"line_ending": "Unix"
 			}
 		}
 	],
-	"build_system": "Packages/DKit/D.sublime-build",
+	"build_system": "",
 	"build_system_choices":
 	[
 		[
@@ -143,8 +71,8 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 373.0,
-		"last_filter": "",
+		"height": 398.0,
+		"last_filter": "run",
 		"selected_items":
 		[
 			[
@@ -225,34 +153,77 @@
 	"expanded_folders":
 	[
 		"/home/marcin/Dropbox/Development/D/earthlings",
-		"/home/marcin/Dropbox/Development/D/earthlings/source",
-		"/home/marcin/Dropbox/Development/D/earthlings/source/engine",
-		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/graphics",
-		"/home/marcin/Dropbox/Development/D/earthlings/source/game",
-		"/home/marcin/Dropbox/Development/D/earthlings/source/game/entity",
-		"/home/marcin/Dropbox/Development/D/earthlings/source/game/level"
+		"/home/marcin/Dropbox/Development/D/earthlings/source"
 	],
 	"file_history":
 	[
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/entity/particle.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/particle_type.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/graphics/package.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/time.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/window/core.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/package.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/level/core.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/graphics/image.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/entity/human.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/core.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/data/objects/grenade.txt",
+		"/home/marcin/Dropbox/Development/D/earthlings/data/objects/smoke.txt",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/math.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/parser.d",
+		"/home/marcin/.bash_profile",
+		"/home/marcin/.profile",
+		"/home/marcin/.gtkrc-2.0",
+		"/home/marcin/.dmrc",
+		"/home/marcin/.bashrc",
+		"/home/marcin/Dropbox/Development/Korepetycje/Adam Pachałko/projekt2.cpp",
+		"/tmp/POP_2015_12_15_projekt_1_Niewiadomska_Małgorzata_IBM_3_160803.cpp",
+		"/run/media/marcin/38A2-C492/kajakarstwo.xml",
+		"/home/marcin/Dropbox/Fundusze.txt",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/package.d",
+		"/home/marcin/.cache/.fr-KnrNhJ/main.cpp",
+		"/home/marcin/.cache/.fr-BMaCFy/biblioteka.h",
+		"/home/marcin/.cache/.fr-ZZPz5I/biblioteka.h",
+		"/home/marcin/.cache/.fr-GCmJOA/biblioteka.cpp",
+		"/home/marcin/.cache/.fr-5KFiI4/main.cpp",
+		"/home/marcin/Dropbox/Development/Korepetycje/Gosia Niewiadomska/kobietymezczyzni.cpp",
+		"/home/marcin/Dropbox/Development/Korepetycje/Gosia Niewiadomska/nazwapliku.txt",
+		"/home/marcin/Dropbox/Development/Korepetycje/Gosia Niewiadomska/osoby.txt",
+		"/home/marcin/Dropbox/Development/Korepetycje/Karolina Wszeborowska/ProjektB-Ostateczny/liczby_1000.txt",
+		"/home/marcin/Dropbox/Development/Korepetycje/Karolina Wszeborowska/ProjektB-Ostateczny/projektb.cpp",
+		"/home/marcin/Dropbox/Development/Korepetycje/Karolina Wszeborowska/ProjektB-Ostateczny/liczby_10.txt",
+		"/home/marcin/Dropbox/Development/Korepetycje/Karolina Wszeborowska/ProjektB-Ostateczny/liczby_100.txt",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/weapon.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/defines.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/entity/manager.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/controller.d",
+		"/home/marcin/Dropbox/Development/Korepetycje/Agata Czernicka/to.cpp",
+		"/tmp/osoby2-3.cpp",
+		"/tmp/osoby2-2.cpp",
+		"/tmp/osoby2-1.cpp",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/resource.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/image_manager.d",
+		"/tmp/pop-zadanie-1.cpp",
+		"/tmp/osoby2.cpp",
+		"/home/marcin/Dropbox/Development/Korepetycje/Agata Czarniecka/pop-zadanie.cpp",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/entity/worm.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/entity/package.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/player.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/keycode.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/event.d",
+		"/home/marcin/Dropbox/Development/Korepetycje/Karolina Wszeborowska/ProjektC/projektc.cpp",
 		"/home/marcin/Dropbox/Development/D/earthlings/data/object/ball_simple.txt",
 		"/home/marcin/Dropbox/Development/D/earthlings/data/maps/mars/settings.txt",
 		"/home/marcin/.cache/.fr-WYS8IX/Readme.txt",
 		"/home/marcin/Dropbox/Development/D/earthlings/source/app.d",
 		"/home/marcin/Dropbox/Development/D/earthlings/source/game/entity/entity.d",
-		"/home/marcin/Dropbox/Development/D/earthlings/source/game/core.d",
 		"/tmp/SDL_keycode.h",
 		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/core.d",
 		"/tmp/SDL_events.h",
 		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/hook.d",
-		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/package.d",
-		"/home/marcin/Dropbox/Development/D/earthlings/source/game/level/core.d",
-		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/parser.d",
-		"/home/marcin/Dropbox/Development/D/earthlings/source/game/controller.d",
-		"/home/marcin/Dropbox/Development/D/earthlings/source/game/entity/human.d",
 		"/home/marcin/Dropbox/Development/D/earthlings/data/object/ball.txt",
 		"/home/marcin/Dropbox/Development/Korepetycje/Marcin Adamkiewicz/funkcje.cpp",
 		"/home/marcin/Dropbox/Development/Korepetycje/Zadania/Hi-Lo/hilo.cpp",
-		"/home/marcin/Dropbox/Development/D/earthlings/source/game/entity/particle.d",
 		"/home/marcin/.cache/.fr-kGWTIY/Zadanie1_tablica.cpp",
 		"/home/marcin/Dropbox/Development/Korepetycje/Zadania/Wieża Hanoi/hanoi.cpp",
 		"/home/marcin/Dropbox/Development/Korepetycje/Karolina Wszeborowska/ProjektB/projektb.cpp",
@@ -313,55 +284,7 @@
 		"/home/marcin/Development/ProjektB/biblioteka.cpp",
 		"/home/marcin/Development/Adamkiewicz/1815481.cpp",
 		"/home/marcin/Development/C++/Korepetycje/ProjektB.cpp",
-		"/home/marcin/Development/ProjektB/projekt.cpp",
-		"/home/marcin/Development/earthlings/source/game/entity/manager.d",
-		"/home/marcin/Development/earthlings/source/game/core.d",
-		"/home/marcin/Development/earthlings/source/game/entity/package.d",
-		"/home/marcin/Development/earthlings/source/game/entity/human.d",
-		"/home/marcin/Development/earthlings/source/game/entity/entity.d",
-		"/home/marcin/Dropbox/Linux/Love2D/mp2d/script/editor.lua",
-		"/home/marcin/Development/earthlings/source/game/entity/worm.d",
-		"/home/marcin/Development/D/earthlings/source/game/object.d",
-		"/home/marcin/Development/D/earthlings/DEVELOPMENT/object.d",
-		"/home/marcin/Development/D/earthlings/source/game/core.d",
-		"/home/marcin/Development/D/earthlings/source/app.d",
-		"/home/marcin/Development/D/earthlings/source/game/controller.d",
-		"/home/marcin/Development/D/earthlings/source/engine/hook.d",
-		"/home/marcin/Development/D/earthlings/source/game/player.d",
-		"/home/marcin/Development/D/earthlings/source/game/image_manager.d",
-		"/home/marcin/Development/D/earthlings/source/game/console.d",
-		"/home/marcin/Development/D/earthlings/source/engine/graphics/image.d",
-		"/home/marcin/Development/D/earthlings/source/engine/resource.d",
-		"/home/marcin/Development/D/earthlings/source/game/entity/worm.d",
-		"/home/marcin/Development/D/earthlings/data/object/ball.txt",
-		"/home/marcin/Development/D/earthlings/source/engine/math.d",
-		"/home/marcin/Development/D/earthlings/source/engine/graphics/draw.d",
-		"/home/marcin/Development/D/earthlings/source/engine/graphics/core.d",
-		"/home/marcin/Development/D/earthlings/data/object/ball.png",
-		"/home/marcin/Games/gusanos/SConstruct",
-		"/home/marcin/Games/gusanos/OmfgScript/omfg_script.cpp",
-		"/home/marcin/Games/gusanos/src/engine.cpp",
-		"/home/marcin/Games/gusanos/liero2gus/def.h",
-		"/home/marcin/Games/gusanos/Console/alias.cpp",
-		"/etc/NetworkManager/NetworkManager.conf",
-		"/home/marcin/Development/D/earthlings/core.exception.AssertError@source/engine/graphics/image.d",
-		"/home/marcin/Development/D/SpareChange/dub.sdl",
-		"/home/marcin/Development/D/earthlings/source/engine/graphics/font.d",
-		"/home/marcin/Development/D/earthlings/source/engine/time.d",
-		"/home/marcin/Development/D/earthlings/source/game/package.d",
-		"/home/marcin/Development/D/earthlings/data/fonts/small.cfg",
-		"/home/marcin/Development/D/earthlings/.gitignore",
-		"/home/marcin/Development/D/earthlings/object.Exception@source/engine/graphics/image.d",
-		"/home/marcin/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
-		"/home/marcin/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
-		"/home/marcin/Development/D/earthlings/data/maps/mars/settings.txt",
-		"/home/marcin/Development/D/earthlings/source/engine/event.d",
-		"/home/marcin/Development/D/earthlings/source/game/level/core.d",
-		"/home/marcin/Development/D/earthlings/source/game/defines.d",
-		"/home/marcin/Development/D/earthlings/dub.json",
-		"/home/marcin/Development/D/earthlings/core.exception.RangeError@source/game/level/core.d",
-		"/home/marcin/Development/D/earthlings/source/game/entity/entity.d",
-		"/home/marcin/Development/D/earthlings/source/engine/core.d"
+		"/home/marcin/Development/ProjektB/projekt.cpp"
 	],
 	"find":
 	{
@@ -379,6 +302,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"		\n",
 			"delta",
 			"lta;\n		if(on_ground)",
 			"WALK_SPEED",
@@ -462,19 +386,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "source/game/entity/human.d",
-					"semi_transient": false,
+					"file": "source/app.d",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 3326,
+						"buffer_size": 1058,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								468,
-								468
+								320,
+								320
 							]
 						],
 						"settings":
@@ -487,266 +411,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "source/engine/math.d",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1158,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1156,
-								1156
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/D/D.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 488.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "source/engine/graphics/image.d",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10082,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3861,
-								3861
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/D/D.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2615.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "source/game/defines.d",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 235,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								218,
-								218
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/D/D.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "source/game/player.d",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 638,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								404,
-								404
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/D/D.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 113.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "source/game/controller.d",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1435,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								975,
-								975
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/D/D.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 720.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "source/game/core.d",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1196,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								466,
-								466
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/D/D.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 270.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "source/engine/keycode.d",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1570,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								53,
-								53
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/D/D.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "source/game/package.d",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 238,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								69,
-								69
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/D/D.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "source/engine/event.d",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1490,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1417,
-								1417
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/D/D.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 585.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
 					"type": "text"
 				}
 			]

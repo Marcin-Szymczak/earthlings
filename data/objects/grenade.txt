@@ -1,0 +1,27 @@
+#General
+name = grenade
+image = object1.png
+lifetime = 0
+
+#Physics
+gravity = 1
+bouncyness = 0.7
+friction = 0
+air_friction = 0
+
+#Behaviour
+
+on creation()
+{
+	
+}
+
+on update()
+{
+	shoot( smoke )
+}
+	
+on removal()
+{
+	
+}

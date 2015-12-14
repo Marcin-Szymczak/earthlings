@@ -20,8 +20,16 @@ class Human : ControllableEntity
 	enum AIR_SPEED = 20f;
 	enum JUMP_FORCE = 40f;
 	enum MAX_STEP = 2;
-	enum AIM_ACCEL = 20f;
-	enum AIM_SPEED = 70f;
+	enum AIM_ACCEL = 30f;
+	enum AIM_SPEED = 50f;
+	enum WALK_FRAMES = 2;
+
+	enum Stance
+	{
+		None = 0,
+		OneHanded = 4,
+		DoubleHanded = 6,
+	}
 
 	Texture tex;
 	int repeat;
@@ -84,20 +92,29 @@ class Human : ControllableEntity
 						velocity.x += AIR_ACCEL*dt;
 				direction = 1;
 			}
+
 			if( controller.getAction( Up ) && aimspeed > -AIM_SPEED )
 				aimspeed-= AIM_ACCEL*dt;
 			else if( controller.getAction( Down ) && aimspeed < AIM_SPEED )
 				aimspeed += AIM_ACCEL*dt;
 			else
 				aimspeed=0;
+
 			aimangle+=aimspeed*dt;
 
 			enum epsilon = 1/100f;
-			aimangle= aimangle.clamp( epsilon, PI-epsilon );
-			if(direction==1)
-				angle=aimangle-PI_2;
-			else if(direction==-1)
-				angle=PI-aimangle+PI_2;
+			aimangle= aimangle.clamp( -PI_2+epsilon, PI_2-epsilon );
+
+			import std.math;
+
+			if( direction == 1 )
+			{
+				angle = (PI*2 + aimangle).fmod(PI*2);
+			}
+			else if( direction == -1 )
+			{
+				angle = (PI - aimangle).fmod(PI*2);
+			}
 		}
 	}
 
@@ -112,7 +129,7 @@ class Human : ControllableEntity
 		}
 
 		Vector2f nextvel = velocity;
-		nextvel.y += Gravity_Acceleration*dt;
+		nextvel += Gravity_Acceleration*dt;
 		if(on_ground)
 			nextvel.x -= nextvel.x*dt*GROUND_FRICTION;
 
@@ -126,7 +143,6 @@ class Human : ControllableEntity
 			if( can_step_over )
 			{
 				import std.stdio;
-				writefln("Can step over %s", can_step_over );
 				position.y-=can_step_over;
 			}
 			else
@@ -138,23 +154,32 @@ class Human : ControllableEntity
 		velocity = nextvel;
 		position += velocity*dt;
 		//post
+		bool last_on_ground = on_ground;
 		on_ground = false;
 		if( isSolid( position + Vector2f(0,1) ) )
 			on_ground = true;
 
 		if(on_ground)
-			walkframe = (walkframe+dt*abs(velocity.x)/5f)%2;
-
+			if( last_on_ground == true )
+				walkframe = (walkframe+dt*abs(velocity.x)/5f)%WALK_FRAMES;
+			else
+				walkframe = 0;
+		else
+			walkframe = 1;
 	}
 
 	override void draw() const
 	{
 		import std.math;
-		Frame fr = tex.atlas.getAngleFrame( angle, 4 + cast(int)walkframe );
-		graphics.draw( tex, fr, position, 0, Vector2f(1*direction,1), Vector2f(0,0) );
+		Frame fr = tex.atlas.getAngleFrame( angle, Stance.DoubleHanded + cast(int)walkframe );
+		Vector2f drawpos = position.floor;
+		graphics.setColor( Color.white );
+		graphics.draw( tex, fr, drawpos, 0, Vector2f(direction,1), Vector2f(0,0) );
 
-		Vector2f aimpos = position - Vector2f( 0, AIM_HEIGHT );
-		graphics.drawLine( aimpos, aimpos + Vector2f( cos( angle ), sin( angle ) )*20 );
-		graphics.drawPoint( position );
+		Vector2f aimpos = drawpos - Vector2f( 0, AIM_HEIGHT );
+		
+		graphics.setColor( Color.red );
+		graphics.drawPoint( drawpos );
+		graphics.drawPoint( aimpos + Vector2f(cos(angle),sin(angle))*25 );
 	}
 }

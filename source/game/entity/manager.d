@@ -5,24 +5,30 @@ import game.entity.entity;
 
 class EntityManager
 {
-	SList!Entity list;
+	//SList!Entity list;
+	Entity[] list;
 	int count;
+
+	T create(T, Args...)( Args args )
+		
+		if( is( T : Entity ) )
+	{
+		T ent = new T( args );
+		register( ent );
+		return ent;
+	}
 
 	void register( Entity ent )
 	{
-		list.insert( ent );
+		list ~= ent ;
 		count++;
 	}
 
 	void remove( Entity ent )
 	{
-		foreach( el; list )
-		{
-			if( el is ent )
-			{
-				
-			}
-		}
+		import std.algorithm;
+		auto index = list.countUntil( ent );
+		list = list.remove(index);
 	}
 
 	void update( double delta )

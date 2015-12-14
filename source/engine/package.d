@@ -1,5 +1,5 @@
 /+++
-	A 2d game engine.
+	A 2D game engine.
 	
 	Summary: Essentially a SDL2 wrapper with added functionality.
 

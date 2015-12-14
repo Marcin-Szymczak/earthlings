@@ -25,9 +25,13 @@ class TextureManager : ResourceManager!Texture
 	{
 		transparent = color;
 	}
-	override void loadFromFile( string path )
+
+	override void loadFromFile( string path, bool relative=true )
 	{
-		Image img = scoped!Image(path);
+		string full_path = path;
+		if( relative )
+			full_path = base_path ~ path;
+		Image img = scoped!Image(full_path);
 		if( transparent != Color.blank )
 			SDL_SetColorKey( img, true, SDL_MapRGB( img.format, transparent.r, transparent.g, transparent.b ) );
 		writef( "Loading %s ", path);
@@ -37,15 +41,13 @@ class TextureManager : ResourceManager!Texture
 		}
 		write("\n");
 		Texture tex = new Texture(img);
+		if( path in resource )
+			free( path );
+
 		resource[path] = tex;
 	}
 	override void free( string path )
 	{
 
 	}
-}
-
-class ImageManager : ResourceManager!Image
-{
-
 }

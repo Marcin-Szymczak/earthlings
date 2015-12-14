@@ -8,8 +8,6 @@ import std.stdio;
 
 import engine;
 import game;
-import game.entity.particle;
-
 
 TextureManager texture_manager;
 EntityManager entity_manager;
@@ -22,21 +20,29 @@ void initialize()
 {
 	texture_manager = new TextureManager;
 	texture_manager.setBasePath( path_graphics );
-	texture_manager.loadDirectory( "." );
-
-	current_level = new Level( "movementtest1" );
+	//texture_manager.loadDirectory( "." );
+	texture_manager.loadFromFile( "human.png" );
+	ParticleType.base_path = path_objects;
+	ParticleType.loadAll();
+	ParticleType.loadAllResources();
 
 	entity_manager = new EntityManager;
+	current_level = new Level( "mars" );
 
 	local_player = new Player;
 	local_player.name = "Local Player";
 
-	auto ent = new Human();
-	entity_manager.register( ent );
+	auto ent = entity_manager.create!Human();
 
 	local_player.controller = new KeyboardController( local_player );
 	local_player.takeControl( ent );
-	local_player.entity.position = Vector2f( 150, 150 );
+	local_player.entity.position = Vector2f( 150, 150 ).dropDown;
+
+	auto pt = entity_manager.create!Particle("grenade");
+	pt.position.x = 100;
+	pt.position.y = 200;
+	pt.velocity.x = 10;
+	pt.velocity.y = -50;
 }
 
 void keyEvent( KeyboardEvent ev )
@@ -56,10 +62,13 @@ void draw()
 {	
 	current_transformation.origin;
 
+	//translate( Vector2f( -0.49, -0.49 ) );
 	translate( getSize()/2 );
-	graphics.setScale( Vector2f( 3, 3 ) );
-	translate( -local_player.entity.position );
+	graphics.setScale( Vector2f( 4, 4 ) );
+	auto translation = -local_player.entity.position.floor;
 
+	translate( translation );
+	
 	current_level.draw();
 	entity_manager.draw();
 }

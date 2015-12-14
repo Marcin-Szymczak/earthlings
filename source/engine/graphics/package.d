@@ -1,7 +1,7 @@
 /+++
 	Graphics module
 
-	Facilites all drawing and image related operations.
+	Facilitates all drawing and image related operations.
 
 	Authors: Marcin Szymczak
 +++/
