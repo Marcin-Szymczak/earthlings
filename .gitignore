@@ -1,7 +1,6 @@
-bin/
-*.sublime-workspace
-.dub/
-doc
-doc/*
-*.log
-*.def
+.dub
+docs.json
+__dummy.html
+*.o
+*.obj
+dub.selections
