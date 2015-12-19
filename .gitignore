@@ -1,6 +1,45 @@
-.dub
+#niewiem do czego to
+doc
+doc/*
 docs.json
+*.log
+*.def 
 __dummy.html
 *.o
 *.obj
-dub.selections
+# exeki tez sie wyrzuca?
+*.exe
+
+
+#Dllki i liby też wywalamy?	
+	*.dll
+	*.lib
+
+#Gówniany Sublime
+	*.sublime-workspace
+
+#Gejowski Dub
+	.dub/
+	.dub
+	#bo samo sie robi gdy walisz komende dub wiec wywalam
+	dub.selections.*
+	
+#Kozacki VisualStudio
+	.vs
+	*.sln
+	*.visualdproj
+
+		# Build results
+		[Dd]ebug/
+		[Dd]ebugPublic/
+		[Rr]elease/
+		[Rr]eleases/
+		x64/
+		x86/
+		build/
+		bld/
+		[Bb]in/
+		[Oo]bj/
+
+
+
