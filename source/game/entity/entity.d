@@ -10,9 +10,10 @@ public:
 	Vector2f velocity = Vector2f(0,0);
 	double angle = 0;
 	
-
 	abstract void draw() const;
 	abstract void update( double delta );
+	void creation(){}
+	void removal(){}
 }
 
 abstract class ControllableEntity : Entity, Controllable

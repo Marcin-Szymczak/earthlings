@@ -424,13 +424,6 @@ public:
 	alias texture this;
 }
 
-/+
-Image generateColoredImage( Image source, Image mask, Color col_mask, Col tint )
-{
-
-}
-+/
-
 /+++
 	Draw a texture
 
@@ -455,6 +448,10 @@ void draw(	Texture tex,
 	SDL_Point sdlcenter;
 	sdlcenter.x = cast(int)center.x;
 	sdlcenter.y = cast(int)center.y;
+
+	int blendmode;
+	SDL_GetRenderDrawBlendMode( current_renderer, &blendmode );
+	SDL_SetTextureBlendMode( tex, blendmode );
 
 	SDL_RenderCopyEx( current_renderer, tex, null, &dst, rotation, &sdlcenter, flip );
 }
@@ -519,5 +516,11 @@ void draw( 	const Texture tex,
 	sdlcenter.x = cast(int)(center.x-frame.cx);
 	sdlcenter.y = cast(int)(center.y-frame.cy);
 
+	int blendmode;
+	SDL_Texture* texture = cast(SDL_Texture*)tex.texture;
+	SDL_GetRenderDrawBlendMode( current_renderer, &blendmode );
+	SDL_SetTextureBlendMode( texture, blendmode );
+	SDL_SetTextureColorMod( texture, current_color.r, current_color.g, current_color.b );
+	SDL_SetTextureAlphaMod( texture, current_color.a );
 	SDL_RenderCopyEx( current_renderer, cast(SDL_Texture*)tex.texture, &src, &dst, rotation, &sdlcenter, flip );
 }

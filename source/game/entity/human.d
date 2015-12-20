@@ -40,6 +40,8 @@ class Human : ControllableEntity
 	float walkframe = 0;
 	float aimspeed = 0;
 	float aimangle = 0;
+	//Weapon weapon;
+
 
 	this()
 	{
@@ -171,7 +173,7 @@ class Human : ControllableEntity
 	override void draw() const
 	{
 		import std.math;
-		Frame fr = tex.atlas.getAngleFrame( angle, Stance.DoubleHanded + cast(int)walkframe );
+		Frame fr = tex.atlas.getAngleFrame( angle, Stance.OneHanded + cast(int)walkframe );
 		Vector2f drawpos = position.floor;
 		graphics.setColor( Color.white );
 		graphics.draw( tex, fr, drawpos, 0, Vector2f(direction,1), Vector2f(0,0) );

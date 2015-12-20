@@ -18,12 +18,13 @@ Renderer current_renderer;
 Color current_color;
 Transformation current_transformation;
 
+///The Blend Modes with which you can draw
 enum BlendMode
 {
-	None = SDL_BLENDMODE_NONE,
-	Blend = SDL_BLENDMODE_BLEND,
-	Additive = SDL_BLENDMODE_ADD,
-	Modulate = SDL_BLENDMODE_MOD,
+	None = SDL_BLENDMODE_NONE, ///No blending
+	Blend = SDL_BLENDMODE_BLEND, ///Simple alpha blending
+	Add = SDL_BLENDMODE_ADD, ///Additive blending
+	Modulate = SDL_BLENDMODE_MOD, ///Modulative blending
 }
 
 enum Flip : SDL_RendererFlip
@@ -168,6 +169,13 @@ struct Color
 void setRenderer( Renderer renderer )
 {
 	current_renderer = renderer;
+}
+/+++
+	Set the current renderer's Blend mode
++++/
+void setBlendMode( BlendMode blendmode )
+{
+	SDL_SetRenderDrawBlendMode( current_renderer, blendmode );
 }
 /+++
 	Set the drawing color

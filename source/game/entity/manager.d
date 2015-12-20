@@ -7,6 +7,7 @@ class EntityManager
 {
 	//SList!Entity list;
 	Entity[] list;
+	Entity[] cleanup_list;
 	int count;
 
 	T create(T, Args...)( Args args )
@@ -26,9 +27,7 @@ class EntityManager
 
 	void remove( Entity ent )
 	{
-		import std.algorithm;
-		auto index = list.countUntil( ent );
-		list = list.remove(index);
+		cleanup_list ~= ent;
 	}
 
 	void update( double delta )
@@ -37,6 +36,18 @@ class EntityManager
 		{
 			ent.update( delta );
 		}
+	
+		foreach( ent; cleanup_list )
+		{
+			import std.algorithm;
+			ent.removal();
+			auto index = list.countUntil( ent );
+			
+			//It can happen that the same entity is requested to be removed multiple times in a frame
+			if( index != -1 )
+				list = list.remove(index);
+		}
+		cleanup_list.length = 0;
 	}
 
 	void draw()

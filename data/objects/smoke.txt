@@ -1,10 +1,11 @@
 #General
 name = smoke
 image = smoke.png
-lifetime = 150
+lifetime = 200
+color_alpha = 50
 
 #Physics
-gravity=-0.1
-air_friction=0
+gravity=-0.15
+air_friction=4
 friction=0
 bouncyness=0

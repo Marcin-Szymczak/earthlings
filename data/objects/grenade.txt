@@ -5,7 +5,7 @@ lifetime = 0
 
 #Physics
 gravity = 1
-bouncyness = 0.7
+bouncyness = 0.3
 friction = 0
 air_friction = 0
 
@@ -16,11 +16,26 @@ on creation()
 	
 }
 
-on update()
+on update(15)
 {
-	shoot( smoke )
+	shoot( spark, 7, 100, 360 )
 }
+
+on update(25)
+{
+	shoot( smoke, 5, 50, 360 )
+}
+
+on update(400)
+{
 	
+}
+
+on bounce()
+{
+
+}
+
 on removal()
 {
 	

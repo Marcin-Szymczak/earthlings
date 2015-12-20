@@ -18,7 +18,7 @@ struct DontParse
 	Parser tries to math key=value pairs given to it as InputRanges into
 	struct's fields. It throws when it couldn't find a match.
 +++/
-template parse(T, R)
+template parseStructure(T, R)
 {
 
 	string parserImpl(args...)()
@@ -41,7 +41,7 @@ template parse(T, R)
 	/+++
 		Parse an InputRange to fill the obj's member
 	+++/
-	void parse(ref T obj, R input)
+	void parseStructure(ref T obj, R input)
 	{
 		import std.conv;
 		import std.format;
@@ -52,7 +52,7 @@ template parse(T, R)
 		auto cap = input.matchFirst( reg );
 
 		if( cap.empty )
-			throw new Exception( format("Invalid input '%s'", input) );
+			throw new Exception( format("'%s' does not match the scheme \"key=value\" to be parsed", input) );
 
 		switch(cap[1])
 		{
@@ -81,7 +81,7 @@ void parseFile(T)(ref T obj, string filename )
 		c++;
 
 		try
-			parse( obj, line );
+			parseStructure( obj, line );
 		catch( Exception e )
 			throw new Exception( format( "%s:%s - %s", filename, c, e.msg ) );
 			//writefln( "%s:%s - %s", filename, c, e.msg );

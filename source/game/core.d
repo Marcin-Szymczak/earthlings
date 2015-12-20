@@ -20,7 +20,6 @@ void initialize()
 {
 	texture_manager = new TextureManager;
 	texture_manager.setBasePath( path_graphics );
-	//texture_manager.loadDirectory( "." );
 	texture_manager.loadFromFile( "human.png" );
 	ParticleType.base_path = path_objects;
 	ParticleType.loadAll();
@@ -43,6 +42,8 @@ void initialize()
 	pt.position.y = 200;
 	pt.velocity.x = 10;
 	pt.velocity.y = -50;
+
+	graphics.setBlendMode( BlendMode.Blend );
 }
 
 void keyEvent( KeyboardEvent ev )
