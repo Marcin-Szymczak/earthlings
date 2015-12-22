@@ -1,4 +1,4 @@
-#niewiem do czego to
+*.exe
 doc
 doc/*
 docs.json
@@ -7,24 +7,20 @@ docs.json
 __dummy.html
 *.o
 *.obj
-# exeki tez sie wyrzuca?
-*.exe
-
-
-#Dllki i liby też wywalamy?	
+ 
+#Dllki	
 	*.dll
 	*.lib
 
-#Gówniany Sublime
+#Sublime
 	*.sublime-workspace
 
-#Gejowski Dub
+#Dub
 	.dub/
-	.dub
-	#bo samo sie robi gdy walisz komende dub wiec wywalam
-	dub.selections.*
+	#tylko to co juz dodane reszty jsonow nie chce
+	*.json
 	
-#Kozacki VisualStudio
+#VisualStudio
 	.vs
 	*.sln
 	*.visualdproj
