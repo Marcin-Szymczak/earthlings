@@ -17,25 +17,11 @@ __dummy.html
 
 #Dub
 	.dub/
+	.dub/*
 	#tylko to co juz dodane reszty jsonow nie chce
 	*.json
 	
-#VisualStudio
-	.vs
-	*.sln
-	*.visualdproj
 
-		# Build results
-		[Dd]ebug/
-		[Dd]ebugPublic/
-		[Rr]elease/
-		[Rr]eleases/
-		x64/
-		x86/
-		build/
-		bld/
-		[Bb]in/
-		[Oo]bj/
 
 
 
