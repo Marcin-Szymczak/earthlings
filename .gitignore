@@ -9,8 +9,8 @@ __dummy.html
 *.obj
  
 #Dllki	
-	*.dll
-	*.lib
+*.dll
+*.lib
 
 #Sublime
 	*.sublime-workspace
