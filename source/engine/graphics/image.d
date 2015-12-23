@@ -44,6 +44,13 @@ struct Atlas
 	int[] framecx, framecy;
 
 	int columns, rows;
+
+	@property
+	int frame_count()
+	{
+		return columns*rows;
+	}
+
 	/+++
 		Check if the image contains valid atlas data.
 	+++/
@@ -191,7 +198,6 @@ struct Atlas
 		int id = row*columns;
 
 		id += offset%columns;
-		//writefln( "ID: %s", id );
 		return getFrame( id );
 	}
 
@@ -306,38 +312,41 @@ public:
 		Method of color extracting taken from SDL2's wiki
 		https://wiki.libsdl.org/SDL_PixelFormat
 	+/
+	pragma(inline,true)
 	ubyte getPixelComponent(string component)( uint pixel, SDL_PixelFormat* format )
 	{
 		mixin pixelComponent!( component );
+
 		uint temp = pixel & mask;
 		temp >>= shift;
 		temp <<= loss;
 		return cast(ubyte) temp;
 	}
+
+	pragma(inline,true)
+	uint getRawPixel( int x, int y, SDL_PixelFormat* format )
+	{
+		ubyte* ptr = cast(ubyte*)surface.pixels;
+		ptr += y*surface.pitch;
+		ptr += x*format.BytesPerPixel;
+
+		return *(cast(uint*)ptr);
+	}
 	/+
 		Method of color extracting taken from SDL2's wiki
 		https://wiki.libsdl.org/SDL_PixelFormat
 	+/
-	void setPixelComponent(string component)( uint pixel, uint mask, uint shift, uint loss )
-	{
-		mixin( pixelComponent( component ) );
-		uint temp = !0 & mask;
-		writeln( cast(ubyte[4])temp );
-	}
 	/+++
 		Get color at specified coordinates.
 
 		returns Color at specified coordinates.
 	+++/
+	pragma(inline,true)
 	Color getPixel( int x, int y )
 	{
 		auto format = surface.format;
 
-		ubyte* ptr = cast(ubyte*)surface.pixels;
-		ptr += y*surface.pitch;
-		ptr += x*format.BytesPerPixel;
-
-		uint pixel = *(cast(uint*)ptr);
+		uint pixel = getRawPixel( x, y, format );
 		uint temp;
 		Color col;
 
@@ -352,11 +361,22 @@ public:
 		return col;
 	}
 
+	pragma(inline,true)
 	void setPixel( int x, int y, Color color )
 	{
 		auto format = surface.format;
-		ubyte* ptr = cast(ubyte*)surface.pixels;
+		uint r = color.r >> format.Rshift;
+		uint g = color.g >> format.Gshift;
+		uint b = color.b >> format.Bshift;
+		uint a = color.a >> format.Ashift;
+		uint pixel = r + g + b + a ;
 
+		ubyte* ptr = cast(ubyte*)surface.pixels;
+		ptr += y*surface.pitch;
+		ptr += x*format.BytesPerPixel;
+
+		uint* intptr = cast(uint*)ptr;
+		*intptr = pixel;
 	}
 
 	/+++
@@ -507,14 +527,25 @@ void draw( 	const Texture tex,
 	src.h = cast(int)frame.h;
 
 	SDL_Rect dst;
-	dst.x = cast(int)(position.x-(frame.cx+center.x)*scale.x);
-	dst.y = cast(int)(position.y-(frame.cy+center.y)*scale.y);
-	dst.w = cast(int)(frame.w*scale.x);
-	dst.h = cast(int)(frame.h*scale.y);
+	dst.x = cast(int)(position.x-(frame.cx+center.x)*abs(scale.x));
+	dst.y = cast(int)(position.y-(frame.cy+center.y)*abs(scale.y));
+	dst.w = cast(int)(frame.w*abs(scale.x));
+	dst.h = cast(int)(frame.h*abs(scale.y));
+
+	if( scale.x < 0 )
+	{
+		dst.x--; //Image after flipping should be located around the same point
+		flip += Flip.Horizontal;
+	}
+	if( scale.y < 0 )
+	{
+		dst.y--;
+		flip += Flip.Vertical;
+	}
 
 	SDL_Point sdlcenter;
-	sdlcenter.x = cast(int)(center.x-frame.cx);
-	sdlcenter.y = cast(int)(center.y-frame.cy);
+	sdlcenter.x = cast(int)(center.x+frame.cx);
+	sdlcenter.y = cast(int)(center.y+frame.cy);
 
 	int blendmode;
 	SDL_Texture* texture = cast(SDL_Texture*)tex.texture;

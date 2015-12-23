@@ -8,8 +8,10 @@ class Particle : Entity
 	ParticleType* type;
 	bool created = false; ///When the particle is created, on the first update it is going to call its "creation"
 	int lifetime;
-	int framecount;
-	int anim_frame;
+	int life;
+	float anim_frame = 0;
+	float anim_dir = 1;
+	ubyte alpha;
 
 	this( string typename )
 	{
@@ -17,6 +19,7 @@ class Particle : Entity
 		{
 			this.type = ptr;
 			this.lifetime = type.general.lifetime;
+			this.alpha = type.general.color_alpha;
 		}else{
 			import std.format;
 			throw new Exception( format("No particle type of '%s'", typename) );
@@ -55,21 +58,24 @@ class Particle : Entity
 		drawposition.y = floor( position.y );
 
 		graphics.setColor( Color(type.general.color_red, 
-								type.general.color_blue,
-								type.general.color_green,
-								type.general.color_alpha ) );
+								 type.general.color_green,
+								 type.general.color_blue,
+								 alpha ) );
 		if( type.general.image == "" )
 		{
 			graphics.drawPoint( drawposition );
 		}
 		else
 		{
-			graphics.draw( texture_manager[type.general.image], anim_frame, drawposition );
+			graphics.draw( texture_manager[type.general.image], cast(int)anim_frame, drawposition );
 		}
+		//graphics.drawLine( drawposition, drawposition + Vector2f(sin(angle), cos(angle))*10);
 	}
 
 	override void update( double dt )
 	{
+		import std.math;
+
 		if(!created){
 			creation();
 			created = true;
@@ -79,7 +85,9 @@ class Particle : Entity
 			Vector2f nextvel = velocity;
 			nextvel+=Gravity_Acceleration*type.physics.gravity*dt;
 			nextvel-=velocity*type.physics.air_friction*dt;
-			
+			nextvel+=Vector2f( sin(angle)*type.physics.acceleration, cos(angle)*type.physics.acceleration)*dt;
+			angle = angle + type.physics.angular_acceleration/180*PI*dt;
+
 			if( isSolid( Vector2f( position.x+nextvel.x*dt, position.y ) ))
 			{
 				nextvel.x*=-type.physics.bouncyness;
@@ -107,13 +115,34 @@ class Particle : Entity
 		{
 			foreach( key, actions; type.events.update )
 			{
-				if( framecount%key == 0 )
+				if( life%key == 0 )
 				{
 					foreach( action; actions )
 						action.call( this );
 				}
 			}
 		}
-		framecount++;
+
+		with(ParticleType.Animation.Type)
+		{
+			if( type.animation.type != None )
+			{
+				int framecount = texture_manager[type.general.image].atlas.frame_count;
+				switch( type.animation.type )
+				{
+					case Repeat:
+						anim_frame = (anim_frame+type.animation.speed*anim_dir*dt+framecount).fmod(framecount);
+					break;
+
+					case Once:
+						anim_frame = clamp( anim_frame+type.animation.speed*dt, 0, framecount-0.0001f );
+					break;
+
+					default:
+					break;
+				}
+			}
+		}
+		life++;
 	}
 }

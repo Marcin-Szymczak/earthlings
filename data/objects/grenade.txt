@@ -1,7 +1,7 @@
 #General
 name = grenade
 image = object1.png
-lifetime = 0
+lifetime = 500
 
 #Physics
 gravity = 1
@@ -16,14 +16,9 @@ on creation()
 	
 }
 
-on update(15)
+on update(12)
 {
-	shoot( spark, 7, 100, 360 )
-}
-
-on update(25)
-{
-	shoot( smoke, 5, 50, 360 )
+	shoot( smoke, 3, 50, 360 )
 }
 
 on update(400)
@@ -38,5 +33,5 @@ on bounce()
 
 on removal()
 {
-	
+	shoot( spark, 50, 100, 360 )	
 }

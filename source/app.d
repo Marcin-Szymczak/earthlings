@@ -1,3 +1,4 @@
+import core.memory;
 import std.stdio;
 
 import engine;
@@ -58,6 +59,7 @@ void main()
 		graphics.setColor( Color.black );
 		graphics.clear();
 
+		core.memory.GC.collect();
 		double frametime = frametimer.seconds;
 		sleep( 1/60f - frametime );
 	}

@@ -42,7 +42,6 @@ class Human : ControllableEntity
 	float aimangle = 0;
 	//Weapon weapon;
 
-
 	this()
 	{
 		tex = texture_manager["human.png"];
@@ -95,6 +94,17 @@ class Human : ControllableEntity
 				direction = 1;
 			}
 
+			if( controller.getAction( Shoot ) )
+			{
+				//weapon.shoot( this );
+			}
+
+			if( controller.getAction( Change ) )
+			{
+				//current_level.eraseSquare( position + Vector2f(0,1), Vector2f(4,4) );
+				current_level.eraseCircle( position + Vector2f(0, -AIM_HEIGHT+1), AIM_HEIGHT );
+			}
+
 			if( controller.getAction( Up ) && aimspeed > -AIM_SPEED )
 				aimspeed-= AIM_ACCEL*dt;
 			else if( controller.getAction( Down ) && aimspeed < AIM_SPEED )
@@ -104,7 +114,7 @@ class Human : ControllableEntity
 
 			aimangle+=aimspeed*dt;
 
-			enum epsilon = 1/100f;
+			enum epsilon = 1/1000f;
 			aimangle= aimangle.clamp( -PI_2+epsilon, PI_2-epsilon );
 
 			import std.math;
@@ -135,6 +145,7 @@ class Human : ControllableEntity
 		if(on_ground)
 			nextvel.x -= nextvel.x*dt*GROUND_FRICTION;
 
+		//Check if feet collide with an obstacle to step over
 		if( isSolid( position + Vector2f(nextvel.x*dt, 0 )) ){
 			int can_step_over=0;
 			for(int i=MAX_STEP; i>0; i-- )
@@ -150,11 +161,24 @@ class Human : ControllableEntity
 			else
 				nextvel.x *= 0;
 		}
+		//Check the rest of the body ( no stepping over )
+		/+else
+		{
+			for( float y=0; y<=AIM_HEIGHT; y++ )
+			{
+				if( isSolid( position + Vector2f( nextvel.x*dt, -y )) )
+				{
+					nextvel.x*=0;
+					break;
+				}
+			}
+		}+/
 		if( isSolid( position + Vector2f(0, nextvel.y)*dt) )
 			nextvel.y *= 0;
 
 		velocity = nextvel;
 		position += velocity*dt;
+
 		//post
 		bool last_on_ground = on_ground;
 		on_ground = false;

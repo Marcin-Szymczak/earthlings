@@ -18,6 +18,13 @@ struct Material
 		Destructible = 1<<1,
 	}
 
+	enum Type
+	{
+		Air,
+		Rock,
+		Dirt,
+	}
+
 	string name;
 	Color color;
 	Property property;
@@ -120,13 +127,23 @@ public:
 			graphics.draw( fg, Vector2f( 0, 0 ) );
 	}
 
+	bool inBounds( Vector2f pos )
+	{
+		int x,y;
+		x = cast(int)pos.x;
+		y = cast(int)pos.y;
+
+		return x >= 0 && x < w && y >= 0 && y < h;
+	}
+
 	bool isSolid( Vector2f pos )
 	{
 		int x,y;
 		x = cast(int)pos.x;
 		y = cast(int)pos.y;
 
-		if( x<0 || x>=w || y<0 || y>=h ){
+		//Beyond the level it is always solid
+		if( !inBounds(pos) ){
 			return true;		
 		}
 		Material pixel = Material.types[ mat[x + y*w] ];
@@ -137,9 +154,44 @@ public:
 		}
 	}
 
-	void erase( Vector2f pos, Color col )
+	void erase( Vector2f pos )
 	{
 		fg_img.setPixel( cast(int)pos.x, cast(int)pos.y, Color( 0, 0, 0, 0 ) );
+		mat[cast(int)pos.x + cast(int)pos.y*w] = Material.Type.Air;
+		dirty=true;
+	}
+
+	void eraseSquare( Vector2f pos, Vector2f size )
+	{
+		for( float x=pos.x-size.x/2; x<=pos.x+size.x/2; x++ )
+		{
+			for( float y=pos.y-size.y/2; y<=pos.y+size.y/2; y++ )
+			{
+				if( inBounds( Vector2f( x,y ) ) )
+				{
+					erase( Vector2f( x, y ) );
+				}
+			}
+		}
+	}
+
+	void eraseCircle( Vector2f pos, float radius )
+	{
+		import std.math;
+
+		for( float x=pos.x-radius; x<=pos.x+radius; x++ )
+		{
+			for( float y=pos.y-radius; y<=pos.y+radius; y++ )
+			{
+				if( inBounds( Vector2f(x,y) ) && sqrt( (x-pos.x)^^2 + (y-pos.y)^^2 ) <= radius )
+					erase( Vector2f( x, y ) );
+			}
+		}
+	}
+
+	void damage( Vector2f pos )
+	{
+
 	}
 
 	Vector2f dropDown( Vector2f pos )

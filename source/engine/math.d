@@ -30,7 +30,7 @@ struct Vector2(T)
 	}
 
 	Vector2!T opUnary( string s )()
-	if( s == "-")
+		if( s == "-")
 	{
 		return Vector2f( -x, -y );
 	}
@@ -42,6 +42,7 @@ struct Vector2(T)
 		}else
 			static assert( 0, "Vector!T operation "~op~" not supported");
 	}
+
 	Vector2!T opBinary( string op )( T rhs ) const
 	{
 		static if( op == "*" || op == "/" ){
@@ -49,6 +50,7 @@ struct Vector2(T)
 		}else
 			static assert( 0, "Vector!T operation "~op~" not supported");
 	}
+
 	void opOpAssign( string op )( Vector2!T rhs )
 	{
 		this = opBinary!op( rhs );

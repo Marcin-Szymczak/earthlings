@@ -1,0 +1,22 @@
+#General
+name = banana
+image = banana.png
+lifetime = 400
+
+#Animation
+type = once
+speed = 10
+
+#Physics
+gravity = 1
+bouncyness = 0.9
+friction = 1
+air_friction = 1
+
+#Behaviour
+
+on removal()
+{
+	shoot( banana_part_a, 32, 64, 360 )
+	shoot( banana_part_b, 48, 64, 360 )
+}

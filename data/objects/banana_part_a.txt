@@ -1,0 +1,14 @@
+#General
+name = banana_part_a
+
+lifetime = 0
+color_red = 247
+color_green = 233
+color_blue = 108
+color_alpha = 255
+
+#Physics
+gravity = 1
+air_friction = 5
+friction = 4
+bouncyness = 0.25

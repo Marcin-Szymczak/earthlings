@@ -12,9 +12,9 @@ enum Action
 	Down,
 	Left,
 	Right,
-	Fire,
+	Shoot,
 	Jump,
-	Change
+	Change,
 }
 
 /// Interface of a generic Controller
@@ -42,8 +42,10 @@ class KeyboardController : Controller
 
 	this( Player player )
 	{
+		import std.traits;
+
 		Hook_KeyEvent.add( this );
-		foreach( key; Action.min .. Action.max )
+		foreach( key; EnumMembers!Action )
 		{
 			state[key] = false;
 		}
@@ -80,6 +82,10 @@ class KeyboardController : Controller
 			case SDLK_g:
 				key = Jump;
 			break;
+			case SDLK_h:
+				key = Change;
+			break;
+
 			default:
 			return;
 		}

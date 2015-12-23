@@ -10,6 +10,13 @@ struct DontParse
 
 }
 
+/+++
+	
++++/
+struct ParseHandler(T)
+{
+	T function(string input) handler;
+}
 
 /+++
 	Parse strings into structs
@@ -29,6 +36,7 @@ template parseStructure(T, R)
 		auto arg = args[0];
 		static if( !hasUDA!(__traits( getMember, T, args[0] ), DontParse) ){
 			str ~= `case "`~arg~`":`;
+			//static if( hasUDA!(__traits( getMember, T, args[0] ), ParseHandler ) )
 			str ~= `obj.`~arg~` = to!(typeof( obj.`~arg~` ))( cap[2].idup );`;
 			str ~= `break;`;
 		}

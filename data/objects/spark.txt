@@ -1,10 +1,11 @@
 #General
 name = spark
+
 color_red = 200
 color_green = 200
 color_blue = 0
 color_alpha = 255
-lifetime = 5
+lifetime = 70
 
 
 #Physics
@@ -15,7 +16,13 @@ air_friction = 3
 
 #Behaviour
 
+on update(1)
+{
+	addalpha( -10 )
+}
+
 on bounce()
 {
+	explode(5)
 	remove()
 }

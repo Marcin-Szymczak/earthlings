@@ -1,0 +1,812 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"n",
+				"n"
+			],
+			[
+				"parseProperty",
+				"parseProperty_mixin	function"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "source/game/entity/entity.d",
+			"settings":
+			{
+				"buffer_size": 751,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/game/core.d",
+			"settings":
+			{
+				"buffer_size": 1637,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/game/entity/human.d",
+			"settings":
+			{
+				"buffer_size": 4279,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/app.d",
+			"settings":
+			{
+				"buffer_size": 1106,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/game/particle_type.d",
+			"settings":
+			{
+				"buffer_size": 9663,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "data/objects/spark.txt",
+			"settings":
+			{
+				"buffer_size": 257,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/game/level/core.d",
+			"settings":
+			{
+				"buffer_size": 3530,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/game/controller.d",
+			"settings":
+			{
+				"buffer_size": 1498,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/engine/graphics/image.d",
+			"settings":
+			{
+				"buffer_size": 12362,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/D/D.sublime-build",
+					""
+				],
+				[
+					"Packages/DKit/D.sublime-build",
+					""
+				],
+				[
+					"Packages/DKit/D.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/DKit/D.sublime-build",
+					"dub"
+				]
+			],
+			[
+				"Packages/DKit/D.sublime-build",
+				"dub"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 398.0,
+		"last_filter": "run",
+		"selected_items":
+		[
+			[
+				"run",
+				"Build With: D - Run"
+			],
+			[
+				"dub",
+				"Build With: D - dub"
+			],
+			[
+				"",
+				"DKit: Restart DCD Autocompletion Server"
+			],
+			[
+				"close all",
+				"File: Close All"
+			],
+			[
+				"DUB",
+				"Build With: D - dub"
+			],
+			[
+				"build",
+				"Build With: D - dub"
+			],
+			[
+				"dcd",
+				"DKit: Restart DCD Autocompletion Server"
+			],
+			[
+				"Dub",
+				"Build With: D - dub"
+			],
+			[
+				"Run",
+				"Build With: D - Run"
+			],
+			[
+				"DK",
+				"DKit: Restart DCD Autocompletion Server"
+			],
+			[
+				"show",
+				"DKit: Show Documentation"
+			],
+			[
+				"Dk",
+				"DKit: Show Documentation"
+			],
+			[
+				"buid",
+				"Build With: D - dub"
+			],
+			[
+				"DKit",
+				"DKit: Create Project From DUB Package File"
+			]
+		],
+		"width": 398.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/marcin/Dropbox/Development/D/earthlings",
+		"/home/marcin/Dropbox/Development/D/earthlings/data",
+		"/home/marcin/Dropbox/Development/D/earthlings/data/objects",
+		"/home/marcin/Dropbox/Development/D/earthlings/source",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/graphics",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/entity",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/level"
+	],
+	"file_history":
+	[
+		"/home/marcin/Dropbox/Development/D/earthlings/.gitignore",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/graphics/image.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/core.d",
+		"/home/marcin/.cache/.fr-J8C4dw/SDL-2.0.4-9901/WhatsNew.txt",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/player.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/data/weapons/bananer.txt",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/entity/particle.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/entity/human.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/controller.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/particle_type.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/image_manager.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/data/objects/smoke.txt",
+		"/home/marcin/Dropbox/Development/D/earthlings/data/objects/grenade.txt",
+		"/home/marcin/Dropbox/Development/D/earthlings/data/objects/spark.txt",
+		"/home/marcin/Dropbox/Development/D/earthlings/data/objects/banana.txt",
+		"/home/marcin/Dropbox/Development/D/earthlings/data/objects/banana_part_b.txt",
+		"/home/marcin/Dropbox/Development/D/earthlings/data/objects/banana_part_a.txt",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/math.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/level/core.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/parser.d-mixin-67",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/parser.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/dub.json",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/graphics/package.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/time.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/window/core.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/package.d",
+		"/home/marcin/.bash_profile",
+		"/home/marcin/.profile",
+		"/home/marcin/.gtkrc-2.0",
+		"/home/marcin/.dmrc",
+		"/home/marcin/.bashrc",
+		"/home/marcin/Dropbox/Development/Korepetycje/Adam Pachałko/projekt2.cpp",
+		"/tmp/POP_2015_12_15_projekt_1_Niewiadomska_Małgorzata_IBM_3_160803.cpp",
+		"/run/media/marcin/38A2-C492/kajakarstwo.xml",
+		"/home/marcin/Dropbox/Fundusze.txt",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/package.d",
+		"/home/marcin/.cache/.fr-KnrNhJ/main.cpp",
+		"/home/marcin/.cache/.fr-BMaCFy/biblioteka.h",
+		"/home/marcin/.cache/.fr-ZZPz5I/biblioteka.h",
+		"/home/marcin/.cache/.fr-GCmJOA/biblioteka.cpp",
+		"/home/marcin/.cache/.fr-5KFiI4/main.cpp",
+		"/home/marcin/Dropbox/Development/Korepetycje/Gosia Niewiadomska/kobietymezczyzni.cpp",
+		"/home/marcin/Dropbox/Development/Korepetycje/Gosia Niewiadomska/nazwapliku.txt",
+		"/home/marcin/Dropbox/Development/Korepetycje/Gosia Niewiadomska/osoby.txt",
+		"/home/marcin/Dropbox/Development/Korepetycje/Karolina Wszeborowska/ProjektB-Ostateczny/liczby_1000.txt",
+		"/home/marcin/Dropbox/Development/Korepetycje/Karolina Wszeborowska/ProjektB-Ostateczny/projektb.cpp",
+		"/home/marcin/Dropbox/Development/Korepetycje/Karolina Wszeborowska/ProjektB-Ostateczny/liczby_10.txt",
+		"/home/marcin/Dropbox/Development/Korepetycje/Karolina Wszeborowska/ProjektB-Ostateczny/liczby_100.txt",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/weapon.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/defines.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/entity/manager.d",
+		"/home/marcin/Dropbox/Development/Korepetycje/Agata Czernicka/to.cpp",
+		"/tmp/osoby2-3.cpp",
+		"/tmp/osoby2-2.cpp",
+		"/tmp/osoby2-1.cpp",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/resource.d",
+		"/tmp/pop-zadanie-1.cpp",
+		"/tmp/osoby2.cpp",
+		"/home/marcin/Dropbox/Development/Korepetycje/Agata Czarniecka/pop-zadanie.cpp",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/entity/worm.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/entity/package.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/keycode.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/event.d",
+		"/home/marcin/Dropbox/Development/Korepetycje/Karolina Wszeborowska/ProjektC/projektc.cpp",
+		"/home/marcin/Dropbox/Development/D/earthlings/data/object/ball_simple.txt",
+		"/home/marcin/Dropbox/Development/D/earthlings/data/maps/mars/settings.txt",
+		"/home/marcin/.cache/.fr-WYS8IX/Readme.txt",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/app.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/game/entity/entity.d",
+		"/tmp/SDL_keycode.h",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/core.d",
+		"/tmp/SDL_events.h",
+		"/home/marcin/Dropbox/Development/D/earthlings/source/engine/hook.d",
+		"/home/marcin/Dropbox/Development/D/earthlings/data/object/ball.txt",
+		"/home/marcin/Dropbox/Development/Korepetycje/Marcin Adamkiewicz/funkcje.cpp",
+		"/home/marcin/Dropbox/Development/Korepetycje/Zadania/Hi-Lo/hilo.cpp",
+		"/home/marcin/.cache/.fr-kGWTIY/Zadanie1_tablica.cpp",
+		"/home/marcin/Dropbox/Development/Korepetycje/Zadania/Wieża Hanoi/hanoi.cpp",
+		"/home/marcin/Dropbox/Development/Korepetycje/Karolina Wszeborowska/ProjektB/projektb.cpp",
+		"/home/marcin/Dropbox/Development/Korepetycje/Karolina Wszeborowska/ProjektB/biblioteka.cpp",
+		"/home/marcin/.cache/.fr-15Cn6B/przestawianie_liczb.cpp",
+		"/home/marcin/.cache/.fr-TcGkgG/lokata_euro.cpp",
+		"/home/marcin/Dropbox/Development/Korepetycje/Karolina Wszeborowska/ProjektB/liczby_6.txt",
+		"/home/marcin/.cache/.fr-bXK7Fy/lokata_euro.cpp",
+		"/home/marcin/.cache/.fr-cyD03R/Zadanie1_zarys.cpp",
+		"/home/marcin/Dropbox/Development/D/LoanShark/source/loanshark.d",
+		"/home/marcin/Dropbox/Development/D/LoanShark/source/app.d",
+		"/home/marcin/Dropbox/Development/Korepetycje/Marcin Adamkiewicz/Zadanie 2/zadanie2.cpp",
+		"/home/marcin/Dropbox/Development/Korepetycje/Marta Nawrocka/Instrukcje Warunkowe/Zadanie1_warunkowe.cpp",
+		"/home/marcin/Dropbox/Development/Korepetycje/Marta Nawrocka/Instrukcje Warunkowe/Zadanie1_zarys.cpp",
+		"/home/marcin/Dropbox/Development/D/parser/object.txt",
+		"/home/marcin/Dropbox/Development/D/parser/parser.d",
+		"/home/marcin/Dropbox/Development/Korepetycje/Karolina Wszeborowska/ProjektA/projekt_a.cpp",
+		"/home/marcin/Dropbox/Development/Korepetycje/Karolina Wszeborowska/ProjektA/losowe_liczby_2.txt",
+		"/home/marcin/Dropbox/Development/Korepetycje/Karolina Wszeborowska/ProjektA/slowa_4.txt",
+		"/home/marcin/Dropbox/Development/Korepetycje/Karolina Wszeborowska/ProjektA/pomiar_czasu.txt",
+		"/home/marcin/Dropbox/Development/Korepetycje/Karolina Wszeborowska/ProjektB/liczby_2.txt",
+		"/home/marcin/Dropbox/Development/Korepetycje/Karolina Wszeborowska/ProjektB/posortowane_5.txt",
+		"/home/marcin/Dropbox/Development/Korepetycje/Karolina Wszeborowska/ProjektB/liczby_losowe.txt",
+		"/home/marcin/Dropbox/Development/Korepetycje/Karolina Wszeborowska/ProjektB/pomiary.txt",
+		"/home/marcin/.cache/.fr-vHIyN8/Zadanie1_warunkowe.cpp",
+		"/home/marcin/Dropbox/Development/C/laczenienazw.c",
+		"/home/marcin/Dropbox/Development/C/printfprzykl.c",
+		"/home/marcin/Dropbox/Development/Karolina Wszeborowska/ProjektA/projekt_a.cpp",
+		"/home/marcin/.cache/.fr-4Z0mSa/zad1-dom.cpp",
+		"/home/marcin/Dropbox/Development/D/parser/samolot.txt",
+		"/home/marcin/Dropbox/Development/Karolina Wszeborowska/ProjektA/biblioteka.h",
+		"/home/marcin/Dropbox/Development/Karolina Wszeborowska/ProjektA/biblioteka.cpp",
+		"/home/marcin/Dropbox/Development/Karolina Wszeborowska/ProjektA/wektorprzyklad.cpp",
+		"/home/marcin/Dropbox/Development/Karolina Wszeborowska/ProjektA/fstreamprzyklad.cpp",
+		"/home/marcin/Dropbox/Development/Karolina Wszeborowska/ProjektA/przykladprintf.cpp",
+		"/home/marcin/Dropbox/Development/D/LoanShark/loanshark.d",
+		"/home/marcin/Dropbox/Development/Karolina Wszeborowska/ProjektB/biblioteka.h",
+		"/home/marcin/Dropbox/Development/Karolina Wszeborowska/ProjektB/projektb.cpp",
+		"/home/marcin/Dropbox/Development/Karolina Wszeborowska/ProjektB/biblioteka.cpp",
+		"/home/marcin/Dropbox/Development/D/fibbonaci.d",
+		"/home/marcin/Dropbox/Development/Adamkiewicz/Sprawdzian 1/sprawdzian.cpp",
+		"/home/marcin/Dropbox/Development/Adamkiewicz/Zadanie Przygotowujace/zad1-dom-podp.txt",
+		"/home/marcin/.cache/.fr-VHNinG/zad1-dom.cpp",
+		"/home/marcin/Dropbox/Development/Adamkiewicz/zad1-dom.txt",
+		"/home/marcin/Dropbox/Development/Adamkiewicz/zad1-dom.cpp",
+		"/home/marcin/Dropbox/Development/Adamkiewicz/zad1-interakcjewarunkowetabele-zaddom.cpp",
+		"/home/marcin/Dropbox/Development/D/parser/zaddom_podp1.txt",
+		"/home/marcin/Dropbox/Development/Adamkiewicz/Zadanie Przygotowujace/Zadanie_Przygotowujace.txt",
+		"/home/marcin/Dropbox/Development/Adamkiewicz/1815481.cpp",
+		"/home/marcin/Development/Adamkiewicz/Zadanie_Przygotowujace.txt",
+		"/home/marcin/Development/Parser/object.txt",
+		"/home/marcin/Development/Parser/parser.d"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"4",
+			"		\n",
+			"delta",
+			"lta;\n		if(on_ground)",
+			"WALK_SPEED",
+			"true",
+			"WYSOKOSC",
+			"plik_zrodlo",
+			"reg",
+			");\n",
+			"Button",
+			"fr",
+			"pos",
+			"close",
+			"mat_surf",
+			"matimg",
+			"static",
+			")(",
+			"register",
+			");\n",
+			"fromHex",
+			"hex",
+			"src",
+			"};\n",
+			";",
+			"None",
+			",\n",
+			"pos",
+			"pos1",
+			"int",
+			");\n",
+			"file",
+			"vertexid",
+			"vertexbuffer",
+			";\n",
+			"\"},\n",
+			"2",
+			"3",
+			"2",
+			"Coalition.rte/",
+			"Soldier ",
+			"Œ",
+			"¯",
+			"ñ",
+			"œ",
+			"ê",
+			"æ",
+			"¿",
+			"¹",
+			"³",
+			"Ÿ"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"Marcin.rte/",
+			"Marcin Soldier ",
+			"Ś",
+			"Ż",
+			"ń",
+			"ś",
+			"ę",
+			"ć",
+			"ż",
+			"ą",
+			"ł",
+			"ź"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "source/game/entity/entity.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 751,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								336,
+								336
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 37.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "source/game/core.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1637,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								897,
+								897
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 405.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "source/game/entity/human.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4279,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1728,
+								1728
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1207.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "source/app.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1106,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								19,
+								19
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "source/game/particle_type.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9663,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8505,
+								8505
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 6022.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "data/objects/spark.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 257,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								245,
+								245
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 90.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "source/game/level/core.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3530,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3193,
+								3193
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2452.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "source/game/controller.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1498,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								735,
+								735
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1125.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "source/engine/graphics/image.d",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12362,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7651,
+								7651
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 5355.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 32.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 187.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "earthlings.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"source/engine/graphics/image.d"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 254.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

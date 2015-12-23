@@ -19,6 +19,8 @@ struct Action
 		Shoot, ///
 		AddVelocity, ///
 		AddAngularVelocity, ///
+		AddAlpha, ///
+		ExplodeTerrain, ///
 		Remove, ///
 	}
 	///Shoot an particle of name obj
@@ -30,7 +32,7 @@ struct Action
 		float angle_spread = 0;
 		float angle_offset = 0;
 
-		void call( Particle ent )
+		void call( Particle ent, Entity victim )
 		{
 			import std.math;
 			import std.random;
@@ -48,16 +50,14 @@ struct Action
 
 		void parse(R)(R input)
 		{
-			parseArguments(input,
-				particle_name, count,
-				velocity,
-				angle_spread, angle_offset );
+			input.parseArguments(particle_name, count,
+				velocity, angle_spread, angle_offset );
 		}
 	}
 	///Remove itself
 	static struct ActionRemove
 	{
-		void call( Particle ent )
+		void call( Particle ent, Entity victim )
 		{
 			entity_manager.remove( ent );
 		}
@@ -68,23 +68,62 @@ struct Action
 		}
 	}
 
+	static struct ActionAddAlpha
+	{
+		import engine.math;
+
+		byte amount;
+		void call( Particle ent, Entity victim )
+		{
+			ent.alpha = cast(ubyte)clamp( ent.alpha + amount, 0, 255 );
+		}
+
+		void parse(R)(R input)
+		{
+			input.parseArguments( amount );
+		}
+	}
+
+	static struct ActionExplodeTerrain
+	{
+		float radius;
+
+		void call( Particle ent, Entity victim )
+		{
+			current_level.eraseCircle( ent.position, radius );
+		}
+
+		void parse(R)(R input )
+		{
+			input.parseArguments( radius );
+		}
+	}
+
 	union ///Union of all Actions
 	{
 		ActionShoot shoot;
 		ActionRemove remove;
+		ActionAddAlpha addalpha;
+		ActionExplodeTerrain explodeterr;
 	}
 
 	Type type;	///The type of stored Action
 	
-	void call( Particle ent )
+	void call( Particle ent, Entity victim=null )
 	{
 		switch( type ) with(Type)
 		{
 			case Shoot:
-				shoot.call( ent );
+				shoot.call( ent, victim );
 			break;
 			case Remove:
-				remove.call( ent );
+				remove.call( ent, victim );
+			break;
+			case AddAlpha:
+				addalpha.call( ent, victim );
+			break;
+			case ExplodeTerrain:
+				explodeterr.call( ent, victim );
 			break;
 
 			default:
@@ -92,19 +131,13 @@ struct Action
 		}
 	}
 }
-
-struct Animation
-{
-	string type;
-	int duration;
-}
-
 /+++
 	A Particle's Type
 
 	Holds all properties and actions that should be performed on specific events
 +++/
-struct ParticleType
+//Static means non nested
+static struct ParticleType
 {
 	///General Properties
 	static struct General
@@ -138,7 +171,31 @@ struct ParticleType
 		float bouncyness=0; ///How much of velocity is retained after each bounce (0..1)
 		float air_friction=0; ///The strength of air friction
 		float friction=0; ///The strength of ground friction
+		float acceleration=0;
+		float tangential_acceleration=0;
+		float angular_acceleration=0;
 	}
+	///Animation
+	static struct Animation
+	{
+		///Animation type, governing its looping or lack of
+		@DontParse enum Type
+		{
+			//Used in code
+			None,
+			Once,
+			Repeat,
+			PingPong,
+			//Used in object declarations
+			none = None,
+			once = Once,
+			repeat = Repeat,
+			pingpong = PingPong,
+		}
+		Type type;
+		int speed; //The speed of animation
+	}
+
 	static struct Events
 	{
 		Action[] bounce;
@@ -150,6 +207,7 @@ struct ParticleType
 	{
 		General general;
 		Physics physics;
+		Animation animation;
 
 		Events events;
 
@@ -179,7 +237,6 @@ struct ParticleType
 		{
 			if( !entry.isDir() )
 			{
-				entry.name.writeln;
 				load( entry.name );
 			}
 		}
@@ -203,6 +260,7 @@ struct ParticleType
 			None,
 			General,
 			Physics,
+			Animation,
 			Behaviour,
 		}
 
@@ -251,6 +309,9 @@ struct ParticleType
 						case "General":
 							category = Category.General;
 						break;
+						case "Animation":
+							category = Category.Animation;
+						break;
 						case "Physics":
 							category = Category.Physics;
 						break;
@@ -271,6 +332,9 @@ struct ParticleType
 						break;
 						case Physics:
 							parseStructure( newtype.physics, line );
+						break;
+						case Animation:
+							parseStructure( newtype.animation, line );
 						break;
 						case Behaviour:
 							parseBehaviour( newtype, line, data );
@@ -348,6 +412,14 @@ struct ParticleType
 				case "remove":
 					act.type = Action.Type.Remove;
 					act.remove.parse( cap[2] );
+				break;
+				case "addalpha":
+					act.type = Action.Type.AddAlpha;
+					act.addalpha.parse( cap[2] );
+				break;
+				case "explode":
+					act.type = Action.Type.ExplodeTerrain;
+					act.explodeterr.parse( cap[2] );
 				break;
 				default:
 					throw new Exception( format("Unknown action \"%s\"", cap[1]) );

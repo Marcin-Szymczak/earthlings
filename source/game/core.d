@@ -25,6 +25,8 @@ void initialize()
 	ParticleType.loadAll();
 	ParticleType.loadAllResources();
 
+	graphics.setBlendMode( BlendMode.Blend );
+
 	entity_manager = new EntityManager;
 	current_level = new Level( "mars" );
 
@@ -39,11 +41,14 @@ void initialize()
 
 	auto pt = entity_manager.create!Particle("grenade");
 	pt.position.x = 100;
-	pt.position.y = 200;
+	pt.position.y = 500;
 	pt.velocity.x = 10;
 	pt.velocity.y = -50;
 
-	graphics.setBlendMode( BlendMode.Blend );
+	auto banana = entity_manager.create!Particle("banana");
+	banana.position.x = 200;
+	banana.position.y = 500;
+	
 }
 
 void keyEvent( KeyboardEvent ev )

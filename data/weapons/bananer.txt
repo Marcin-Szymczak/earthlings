@@ -1,0 +1,31 @@
+#General
+name = bananer
+
+clipsize = 10
+reload_time = 10
+spinup = 0
+
+
+#Behaviour
+
+//fires regardless of the spinup
+on press()
+{
+	//play_sound(bananasplash)
+}
+
+//on hold fires only when spinup is finished
+on hold()
+{
+	
+}
+
+on release()
+{
+	
+}
+
+on reload()
+{
+	
+}
